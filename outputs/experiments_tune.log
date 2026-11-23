@@ -1,0 +1,38 @@
+﻿[tune] device cuda; train windows (14459, 30, 17), val windows (3272, 30, 17); val engines [3, 5, 19, 22, 25, 26, 28, 34, 43, 51, 52, 53, 57, 60, 62, 72, 82, 93, 98, 100]; test loaded: False
+[tune] datf_lh0.1_lm0.0 seed 42: best epoch 8, val RMSE 11.62 MAE 8.54 (13.6s)
+[tune] datf_lh0.1_lm0.0 seed 43: best epoch 18, val RMSE 11.08 MAE 8.28 (21.2s)
+[tune] datf_lh0.1_lm0.0 seed 44: best epoch 9, val RMSE 11.67 MAE 8.65 (13.7s)
+[tune] datf_lh0.1_lm0.0 seed 45: best epoch 9, val RMSE 11.30 MAE 8.52 (13.2s)
+[tune] datf_lh0.1_lm0.0 seed 46: best epoch 10, val RMSE 11.54 MAE 8.73 (14.4s)
+[tune] datf_lh0.1_lm0.1 seed 42: best epoch 8, val RMSE 11.45 MAE 8.42 (13.0s)
+[tune] datf_lh0.1_lm0.1 seed 43: best epoch 13, val RMSE 11.22 MAE 8.73 (16.9s)
+[tune] datf_lh0.1_lm0.1 seed 44: best epoch 8, val RMSE 11.57 MAE 8.65 (13.3s)
+[tune] datf_lh0.1_lm0.1 seed 45: best epoch 9, val RMSE 11.13 MAE 8.43 (13.1s)
+[tune] datf_lh0.1_lm0.1 seed 46: best epoch 10, val RMSE 11.79 MAE 8.84 (14.7s)
+[tune] datf_lh0.3_lm0.0 seed 42: best epoch 8, val RMSE 11.80 MAE 9.03 (13.0s)
+[tune] datf_lh0.3_lm0.0 seed 43: best epoch 18, val RMSE 10.94 MAE 8.33 (20.1s)
+[tune] datf_lh0.3_lm0.0 seed 44: best epoch 9, val RMSE 11.58 MAE 8.63 (21.9s)
+[tune] datf_lh0.3_lm0.0 seed 45: best epoch 9, val RMSE 11.17 MAE 8.26 (15.4s)
+[tune] datf_lh0.3_lm0.0 seed 46: best epoch 13, val RMSE 12.06 MAE 8.92 (18.2s)
+[tune] datf_lh0.3_lm0.1 seed 42: best epoch 8, val RMSE 11.67 MAE 8.88 (15.0s)
+[tune] datf_lh0.3_lm0.1 seed 43: best epoch 23, val RMSE 11.05 MAE 8.46 (27.4s)
+[tune] datf_lh0.3_lm0.1 seed 44: best epoch 9, val RMSE 11.48 MAE 8.49 (15.4s)
+[tune] datf_lh0.3_lm0.1 seed 45: best epoch 9, val RMSE 11.48 MAE 8.57 (15.9s)
+[tune] datf_lh0.3_lm0.1 seed 46: best epoch 13, val RMSE 11.96 MAE 8.86 (19.6s)
+[tune] datf_lh1.0_lm0.0 seed 42: best epoch 8, val RMSE 11.95 MAE 9.21 (14.9s)
+[tune] datf_lh1.0_lm0.0 seed 43: best epoch 13, val RMSE 11.14 MAE 8.54 (21.5s)
+[tune] datf_lh1.0_lm0.0 seed 44: best epoch 9, val RMSE 11.68 MAE 8.75 (18.8s)
+[tune] datf_lh1.0_lm0.0 seed 45: best epoch 11, val RMSE 11.76 MAE 8.87 (17.0s)
+[tune] datf_lh1.0_lm0.0 seed 46: best epoch 16, val RMSE 11.97 MAE 8.77 (21.6s)
+[tune] datf_lh1.0_lm0.1 seed 42: best epoch 8, val RMSE 11.91 MAE 9.13 (14.1s)
+[tune] datf_lh1.0_lm0.1 seed 43: best epoch 13, val RMSE 11.04 MAE 8.43 (19.1s)
+[tune] datf_lh1.0_lm0.1 seed 44: best epoch 9, val RMSE 11.69 MAE 8.77 (15.4s)
+[tune] datf_lh1.0_lm0.1 seed 45: best epoch 11, val RMSE 11.86 MAE 8.93 (17.7s)
+[tune] datf_lh1.0_lm0.1 seed 46: best epoch 10, val RMSE 11.91 MAE 8.97 (16.2s)
+[tune] selected {'lambda_hi': 0.1, 'lambda_mono': 0.1, 'run': 'datf_lh0.1_lm0.1'}
+   datf_lh0.1_lm0.0: val RMSE 11.439 ± 0.246
+   datf_lh0.1_lm0.1: val RMSE 11.432 ± 0.265
+   datf_lh0.3_lm0.0: val RMSE 11.510 ± 0.457
+   datf_lh0.3_lm0.1: val RMSE 11.528 ± 0.331
+   datf_lh1.0_lm0.0: val RMSE 11.702 ± 0.335
+   datf_lh1.0_lm0.1: val RMSE 11.683 ± 0.371

@@ -1,0 +1,136 @@
+﻿fold 1: features 17  L1 0.638  R_acc 48.0 (48/80 supported)
+  fold 1 lstm seed 42: best epoch 11
+  fold 1 lstm seed 43: best epoch 11
+  fold 1 lstm seed 44: best epoch 8
+  fold 1 lstm seed 45: best epoch 8
+  fold 1 lstm seed 46: best epoch 2
+  fold 1 datf seed 42: best epoch 32
+  fold 1 datf seed 43: best epoch 21
+  fold 1 datf seed 44: best epoch 19
+  fold 1 datf seed 45: best epoch 23
+  fold 1 datf seed 46: best epoch 14
+fold 2: features 17  L1 0.592  R_acc 41.5 (48/80 supported)
+  fold 2 lstm seed 42: best epoch 12
+  fold 2 lstm seed 43: best epoch 10
+  fold 2 lstm seed 44: best epoch 12
+  fold 2 lstm seed 45: best epoch 11
+  fold 2 lstm seed 46: best epoch 12
+  fold 2 datf seed 42: best epoch 18
+  fold 2 datf seed 43: best epoch 14
+  fold 2 datf seed 44: best epoch 20
+  fold 2 datf seed 45: best epoch 27
+  fold 2 datf seed 46: best epoch 18
+fold 3: features 17  L1 0.633  R_acc 45.0 (47/80 supported)
+  fold 3 lstm seed 42: best epoch 9
+  fold 3 lstm seed 43: best epoch 13
+  fold 3 lstm seed 44: best epoch 9
+  fold 3 lstm seed 45: best epoch 9
+  fold 3 lstm seed 46: best epoch 10
+  fold 3 datf seed 42: best epoch 17
+  fold 3 datf seed 43: best epoch 19
+  fold 3 datf seed 44: best epoch 18
+  fold 3 datf seed 45: best epoch 22
+  fold 3 datf seed 46: best epoch 7
+fold 4: features 17  L1 0.633  R_acc 46.0 (47/80 supported)
+  fold 4 lstm seed 42: best epoch 17
+  fold 4 lstm seed 43: best epoch 19
+  fold 4 lstm seed 44: best epoch 16
+  fold 4 lstm seed 45: best epoch 26
+  fold 4 lstm seed 46: best epoch 24
+  fold 4 datf seed 42: best epoch 11
+  fold 4 datf seed 43: best epoch 14
+  fold 4 datf seed 44: best epoch 14
+  fold 4 datf seed 45: best epoch 16
+  fold 4 datf seed 46: best epoch 13
+fold 5: features 17  L1 0.606  R_acc 48.0 (50/80 supported)
+  fold 5 lstm seed 42: best epoch 18
+  fold 5 lstm seed 43: best epoch 20
+  fold 5 lstm seed 44: best epoch 13
+  fold 5 lstm seed 45: best epoch 22
+  fold 5 lstm seed 46: best epoch 15
+  fold 5 datf seed 42: best epoch 9
+  fold 5 datf seed 43: best epoch 14
+  fold 5 datf seed 44: best epoch 16
+  fold 5 datf seed 45: best epoch 20
+  fold 5 datf seed 46: best epoch 9
+{
+ "folds": [
+  {
+   "fold": 1,
+   "n_inner_train": 64,
+   "n_features": 17,
+   "L1": 0.6384702410882744,
+   "R_acc": 48.0,
+   "n_acc_supported": 48,
+   "acc_q10": 31.7,
+   "acc_q90": 71.10000000000002
+  },
+  {
+   "fold": 2,
+   "n_inner_train": 64,
+   "n_features": 17,
+   "L1": 0.5922718690731703,
+   "R_acc": 41.5,
+   "n_acc_supported": 48,
+   "acc_q10": 31.0,
+   "acc_q90": 69.60000000000001
+  },
+  {
+   "fold": 3,
+   "n_inner_train": 64,
+   "n_features": 17,
+   "L1": 0.6332979649641213,
+   "R_acc": 45.0,
+   "n_acc_supported": 47,
+   "acc_q10": 30.6,
+   "acc_q90": 73.0
+  },
+  {
+   "fold": 4,
+   "n_inner_train": 64,
+   "n_features": 17,
+   "L1": 0.6334422563073259,
+   "R_acc": 46.0,
+   "n_acc_supported": 47,
+   "acc_q10": 31.6,
+   "acc_q90": 76.19999999999999
+  },
+  {
+   "fold": 5,
+   "n_inner_train": 64,
+   "n_features": 17,
+   "L1": 0.6062884385601105,
+   "R_acc": 48.0,
+   "n_acc_supported": 50,
+   "acc_q10": 31.0,
+   "acc_q90": 71.5
+  }
+ ]
+}
+lstm simple POOLED {"detection_rate": 1.0, "median_lead": 45.0, "early_rate": 0.04, "late_or_missed_rate": 0.084, "precision": 0.8803499938090718, "recall": 0.9154506437768241, "engines_with_contradiction_after_latch": 0.096, "contradicted_cycles_total": 1093, "latched_while_sensor_healthy_engines": 0.018}
+   lead {"n": 500, "min": 17.0, "q10": 32.900000000000006, "q25": 38.0, "median": 45.0, "q75": 52.25, "q90": 62.0, "max": 190.0, "mean": 47.458, "sd": 17.762975048260643}
+   CI {"detection_rate": [1.0, 1.0], "median_lead": [43.0, 47.0], "early_rate": [0.014, 0.072], "late_or_missed_rate": [0.04, 0.132], "precision": [0.840828679453454, 0.917643800908617], "recall": [0.8950234791889007, 0.9346681108392173]}
+    {"fold": 1, "R_acc": 48.0, "detection_rate": 1.0, "median_lead": 46.5, "early_rate": 0.05, "late_or_missed_rate": 0.05, "precision": 0.894213453725581, "recall": 0.9048979591836736, "engines_with_contradiction_after_latch": 0.11000000000000001, "latched_while_sensor_healthy_engines": 0.01, "median_lead_seed_range": [43.5, 49.0]}
+    {"fold": 2, "R_acc": 41.5, "detection_rate": 1.0, "median_lead": 38.1, "early_rate": 0.0, "late_or_missed_rate": 0.07999999999999999, "precision": 0.9604780382243261, "recall": 0.9166666666666666, "engines_with_contradiction_after_latch": 0.0, "latched_while_sensor_healthy_engines": 0.0, "median_lead_seed_range": [36.5, 39.5]}
+    {"fold": 3, "R_acc": 45.0, "detection_rate": 1.0, "median_lead": 47.2, "early_rate": 0.05, "late_or_missed_rate": 0.05, "precision": 0.8274630038511095, "recall": 0.9391304347826086, "engines_with_contradiction_after_latch": 0.15, "latched_while_sensor_healthy_engines": 0.05, "median_lead_seed_range": [43.5, 51.0]}
+    {"fold": 4, "R_acc": 46.0, "detection_rate": 1.0, "median_lead": 41.7, "early_rate": 0.01, "late_or_missed_rate": 0.22999999999999998, "precision": 0.8972449098482201, "recall": 0.863404255319149, "engines_with_contradiction_after_latch": 0.08, "latched_while_sensor_healthy_engines": 0.01, "median_lead_seed_range": [41.0, 43.0]}
+    {"fold": 5, "R_acc": 48.0, "detection_rate": 1.0, "median_lead": 48.6, "early_rate": 0.09, "late_or_missed_rate": 0.01, "precision": 0.857364064231982, "recall": 0.9526530612244898, "engines_with_contradiction_after_latch": 0.13999999999999999, "latched_while_sensor_healthy_engines": 0.02, "median_lead_seed_range": [47.0, 51.0]}
+lstm confident POOLED {"detection_rate": 1.0, "median_lead": 42.0, "early_rate": 0.02, "late_or_missed_rate": 0.14, "precision": 0.9123529148583956, "recall": 0.8751931330472102, "engines_with_contradiction_after_latch": 0.048, "contradicted_cycles_total": 701, "latched_while_sensor_healthy_engines": 0.012}
+   lead {"n": 500, "min": 15.0, "q10": 30.0, "q25": 35.0, "median": 42.0, "q75": 49.0, "q90": 59.10000000000002, "max": 190.0, "mean": 43.702, "sd": 15.9562652522952}
+   CI {"detection_rate": [1.0, 1.0], "median_lead": [40.0, 44.0], "early_rate": [0.002, 0.044], "late_or_missed_rate": [0.082, 0.20204999999999973], "precision": [0.8715633953098646, 0.948173564325028], "recall": [0.8519165168825837, 0.8968927000643638]}
+    {"fold": 1, "R_acc": 48.0, "detection_rate": 1.0, "median_lead": 42.2, "early_rate": 0.01, "late_or_missed_rate": 0.1, "precision": 0.925361883414098, "recall": 0.860408163265306, "engines_with_contradiction_after_latch": 0.05, "latched_while_sensor_healthy_engines": 0.0, "median_lead_seed_range": [39.5, 45.0]}
+    {"fold": 2, "R_acc": 41.5, "detection_rate": 1.0, "median_lead": 36.8, "early_rate": 0.0, "late_or_missed_rate": 0.16, "precision": 0.9765006048540277, "recall": 0.8842857142857143, "engines_with_contradiction_after_latch": 0.0, "latched_while_sensor_healthy_engines": 0.0, "median_lead_seed_range": [35.0, 38.0]}
+    {"fold": 3, "R_acc": 45.0, "detection_rate": 1.0, "median_lead": 43.7, "early_rate": 0.04, "late_or_missed_rate": 0.1, "precision": 0.8732368531980393, "recall": 0.8982608695652173, "engines_with_contradiction_after_latch": 0.06000000000000001, "latched_while_sensor_healthy_engines": 0.04, "median_lead_seed_range": [39.5, 47.5]}
+    {"fold": 4, "R_acc": 46.0, "detection_rate": 1.0, "median_lead": 39.6, "early_rate": 0.0, "late_or_missed_rate": 0.27, "precision": 0.9350098352955039, "recall": 0.8376595744680853, "engines_with_contradiction_after_latch": 0.06000000000000001, "latched_while_sensor_healthy_engines": 0.0, "median_lead_seed_range": [38.0, 42.5]}
+    {"fold": 5, "R_acc": 48.0, "detection_rate": 1.0, "median_lead": 45.3, "early_rate": 0.05, "late_or_missed_rate": 0.06999999999999999, "precision": 0.8801835202213837, "recall": 0.896530612244898, "engines_with_contradiction_after_latch": 0.06999999999999999, "latched_while_sensor_healthy_engines": 0.02, "median_lead_seed_range": [42.5, 48.5]}
+lstm raw {"precision": 0.9225333451108559, "recall": 0.8964806866952789, "returns_above_boundary_per_engine": {"n": 500, "min": 0.0, "q10": 0.0, "q25": 0.0, "median": 0.0, "q75": 0.0, "q90": 1.0, "max": 4.0, "mean": 0.284, "sd": 0.6000534378340924}, "boundary_share_of_cycles": 0.03433667781493868, "abs_err_last_50_cycles": {"n": 500, "min": 1.103982731407764, "q10": 2.5760524106376312, "q25": 3.5187238524941837, "median": 5.308322627170413, "q75": 8.420012960246964, "q90": 13.051606012325664, "max": 39.82859812530817, "mean": 6.622126835040603, "sd": 4.385672455326861}}
+datf simple POOLED {"detection_rate": 1.0, "median_lead": 47.0, "early_rate": 0.066, "late_or_missed_rate": 0.046, "precision": 0.8679681274900398, "recall": 0.9350214592274678, "engines_with_contradiction_after_latch": 0.684, "contradicted_cycles_total": 1610, "latched_while_sensor_healthy_engines": 0.0}
+   lead {"n": 500, "min": 25.0, "q10": 35.0, "q25": 40.0, "median": 47.0, "q75": 56.0, "q90": 69.0, "max": 105.0, "mean": 49.2, "sd": 13.325883022022715}
+   CI {"detection_rate": [1.0, 1.0], "median_lead": [45.0, 50.0], "early_rate": [0.032, 0.108], "late_or_missed_rate": [0.02, 0.078], "precision": [0.8381830601251472, 0.8981682502682252], "recall": [0.916272406347505, 0.9524565367849527]}
+    {"fold": 1, "R_acc": 48.0, "detection_rate": 1.0, "median_lead": 48.6, "early_rate": 0.08, "late_or_missed_rate": 0.02, "precision": 0.8765395630609584, "recall": 0.9293877551020409, "engines_with_contradiction_after_latch": 0.71, "latched_while_sensor_healthy_engines": 0.0, "median_lead_seed_range": [45.5, 50.0]}
+    {"fold": 2, "R_acc": 41.5, "detection_rate": 1.0, "median_lead": 40.8, "early_rate": 0.02, "late_or_missed_rate": 0.030000000000000006, "precision": 0.9160085131107026, "recall": 0.9404761904761905, "engines_with_contradiction_after_latch": 0.57, "latched_while_sensor_healthy_engines": 0.0, "median_lead_seed_range": [39.5, 42.0]}
+    {"fold": 3, "R_acc": 45.0, "detection_rate": 1.0, "median_lead": 50.1, "early_rate": 0.06000000000000001, "late_or_missed_rate": 0.04, "precision": 0.8421128895746097, "recall": 0.9506521739130435, "engines_with_contradiction_after_latch": 0.67, "latched_while_sensor_healthy_engines": 0.0, "median_lead_seed_range": [49.0, 51.5]}
+    {"fold": 4, "R_acc": 46.0, "detection_rate": 1.0, "median_lead": 46.7, "early_rate": 0.04, "late_or_missed_rate": 0.1, "precision": 0.8642978422042666, "recall": 0.9270212765957447, "engines_with_contradiction_after_latch": 0.7200000000000001, "latched_while_sensor_healthy_engines": 0.0, "median_lead_seed_range": [46.0, 48.0]}
+    {"fold": 5, "R_acc": 48.0, "detection_rate": 1.0, "median_lead": 49.8, "early_rate": 0.13, "late_or_missed_rate": 0.04, "precision": 0.8526100058101855, "recall": 0.9289795918367346, "engines_with_contradiction_after_latch": 0.75, "latched_while_sensor_healthy_engines": 0.0, "median_lead_seed_range": [44.5, 52.0]}
+datf raw {"precision": 0.9038739889314602, "recall": 0.911244635193133, "returns_above_boundary_per_engine": {"n": 500, "min": 0.0, "q10": 0.0, "q25": 0.0, "median": 1.0, "q75": 2.0, "q90": 3.0, "max": 9.0, "mean": 1.37, "sd": 1.4412683681459315}, "boundary_share_of_cycles": 0.0, "abs_err_last_50_cycles": {"n": 500, "min": 1.3549087772182389, "q10": 2.537800394787508, "q25": 3.4239288813927593, "median": 4.857652889162886, "q75": 7.574641137146482, "q90": 10.71920395645441, "max": 24.369690857681572, "mean": 5.945335228700008, "sd": 3.5551825631754603}}
+failure cases: [{"engine": 91, "fold": 3, "life": 135, "R_acc": 45.0, "seeds_early": 4, "seeds_late_or_missed": 1, "leads": [127, 125, 127, 29, 128], "contradicted": 4, "latched_sensor_healthy": 4}, {"engine": 74, "fold": 1, "life": 166, "R_acc": 48.0, "seeds_early": 0, "seeds_late_or_missed": 5, "leads": [31, 31, 30, 31, 23], "contradicted": 0, "latched_sensor_healthy": 0}, {"engine": 3, "fold": 2, "life": 179, "R_acc": 41.5, "seeds_early": 0, "seeds_late_or_missed": 5, "leads": [29, 30, 29, 29, 30], "contradicted": 0, "latched_sensor_healthy": 0}, {"engine": 37, "fold": 2, "life": 170, "R_acc": 41.5, "seeds_early": 0, "seeds_late_or_missed": 5, "leads": [28, 28, 28, 29, 28], "contradicted": 0, "latched_sensor_healthy": 0}, {"engine": 45, "fold": 3, "life": 158, "R_acc": 45.0, "seeds_early": 0, "seeds_late_or_missed": 5, "leads": [27, 26, 26, 27, 27], "contradicted": 0, "latched_sensor_healthy": 0}, {"engine": 19, "fold": 4, "life": 158, "R_acc": 46.0, "seeds_early": 0, "seeds_late_or_missed": 0, "leads": [61, 61, 61, 64, 61], "contradicted": 5, "latched_sensor_healthy": 0}, {"engine": 24, "fold": 4, "life": 147, "R_acc": 46.0, "seeds_early": 0, "seeds_late_or_missed": 5, "leads": [29, 30, 29, 25, 29], "contradicted": 0, "latched_sensor_healthy": 0}, {"engine": 28, "fold": 4, "life": 165, "R_acc": 46.0, "seeds_early": 0, "seeds_late_or_missed": 5, "leads": [28, 27, 27, 27, 28], "contradicted": 0, "latched_sensor_healthy": 0}, {"engine": 98, "fold": 4, "life": 156, "R_acc": 46.0, "seeds_early": 0, "seeds_late_or_missed": 5, "leads": [29, 27, 29, 29, 30], "contradicted": 0, "latched_sensor_healthy": 0}, {"engine": 77, "fold": 5, "life": 154, "R_acc": 48.0, "seeds_early": 0, "seeds_late_or_missed": 4, "leads": [29, 29, 29, 54, 26], "contradicted": 1, "latched_sensor_healthy": 0}, {"engine": 8, "fold": 4, "life": 150, "R_acc": 46.0, "seeds_early": 0, "seeds_late_or_missed": 4, "leads": [30, 33, 29, 30, 30], "contradicted": 0, "latched_sensor_healthy": 0}, {"engine": 42, "fold": 4, "life": 196, "R_acc": 46.0, "seeds_early": 0, "seeds_late_or_missed": 4, "leads": [25, 23, 26, 32, 30], "contradicted": 0, "latched_sensor_healthy": 0}]

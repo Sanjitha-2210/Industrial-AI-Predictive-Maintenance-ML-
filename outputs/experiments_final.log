@@ -1,0 +1,74 @@
+﻿[final] device cuda; train windows (14459, 30, 17), val windows (3272, 30, 17); val engines [3, 5, 19, 22, 25, 26, 28, 34, 43, 51, 52, 53, 57, 60, 62, 72, 82, 93, 98, 100]; test loaded: True
+[final] lstm_baseline seed 42: best epoch 11, val RMSE 14.40 MAE 10.37 | test RMSE 16.07 MAE 11.82 (10.2s)
+[final] lstm_baseline seed 43: best epoch 9, val RMSE 14.63 MAE 10.65 | test RMSE 16.08 MAE 11.35 (8.4s)
+[final] lstm_baseline seed 44: best epoch 8, val RMSE 13.72 MAE 10.08 | test RMSE 15.43 MAE 11.63 (8.3s)
+[final] lstm_baseline seed 45: best epoch 7, val RMSE 14.69 MAE 11.03 | test RMSE 16.16 MAE 11.52 (7.9s)
+[final] lstm_baseline seed 46: best epoch 6, val RMSE 14.52 MAE 10.79 | test RMSE 16.35 MAE 11.94 (7.6s)
+.\.venv\Scripts\python.exe : Traceback (most recent call last):
+At line:1 char:398
++ ... NG="utf-8"; .\.venv\Scripts\python.exe -m src.experiments final 2>&1  ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\sanji\OneDrive\Desktop\Machine-learning\src\experiments.py", line 277, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\sanji\OneDrive\Desktop\Machine-learning\src\experiments.py", line 269, in main
+    run_stage("final", final_specs(sel["lambda_hi"], sel["lambda_mono"]), args.seeds, settings,
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+              evaluate_test=True, reuse=reuse, log=log)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanji\OneDrive\Desktop\Machine-learning\src\experiments.py", line 133, in run_stage
+    with open(run_dir / "test_predictions.csv", "w", newline="") as f:
+         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\sanji\\OneDrive\\Desktop\\Machine-learning\\outputs
+\\experiments\\final\\datf_full\\seed_42\\test_predictions.csv'
+[final] device cuda; train windows (14459, 30, 17), val windows (3272, 30, 17); val engines [3, 5, 19, 22, 25, 26, 28, 34, 43, 51, 52, 53, 57, 60, 62, 72, 82, 93, 98, 100]; test loaded: True
+[final] lstm_baseline seed 42: already done, skipping
+[final] lstm_baseline seed 43: already done, skipping
+[final] lstm_baseline seed 44: already done, skipping
+[final] lstm_baseline seed 45: already done, skipping
+[final] lstm_baseline seed 46: already done, skipping
+[final] datf_full seed 42: best epoch 8, val RMSE 11.45 MAE 8.42 | test RMSE 14.76 MAE 10.49 (reused)
+[final] datf_full seed 43: best epoch 13, val RMSE 11.22 MAE 8.73 | test RMSE 14.90 MAE 10.77 (reused)
+[final] datf_full seed 44: best epoch 8, val RMSE 11.57 MAE 8.65 | test RMSE 14.00 MAE 10.03 (reused)
+[final] datf_full seed 45: best epoch 9, val RMSE 11.13 MAE 8.43 | test RMSE 15.22 MAE 10.87 (reused)
+[final] datf_full seed 46: best epoch 10, val RMSE 11.79 MAE 8.84 | test RMSE 15.57 MAE 11.12 (reused)
+[final] abl_no_degradation seed 42: best epoch 15, val RMSE 16.00 MAE 11.85 | test RMSE 15.64 MAE 11.67 (15.9s)
+[final] abl_no_degradation seed 43: best epoch 13, val RMSE 15.60 MAE 12.06 | test RMSE 17.47 MAE 13.06 (13.6s)
+[final] abl_no_degradation seed 44: best epoch 9, val RMSE 15.77 MAE 12.12 | test RMSE 16.18 MAE 12.10 (687.3s)
+[final] abl_no_degradation seed 45: best epoch 11, val RMSE 16.16 MAE 12.09 | test RMSE 16.65 MAE 12.35 (12.5s)
+[final] abl_no_degradation seed 46: best epoch 10, val RMSE 16.74 MAE 12.51 | test RMSE 17.16 MAE 12.32 (12.3s)
+[final] abl_no_baseline seed 42: best epoch 9, val RMSE 13.45 MAE 10.18 | test RMSE 15.15 MAE 11.19 (16.4s)
+[final] abl_no_baseline seed 43: best epoch 12, val RMSE 13.23 MAE 10.00 | test RMSE 14.89 MAE 11.43 (18.7s)
+[final] abl_no_baseline seed 44: best epoch 9, val RMSE 13.14 MAE 9.88 | test RMSE 14.43 MAE 11.02 (16.1s)
+[final] abl_no_baseline seed 45: best epoch 11, val RMSE 13.48 MAE 10.05 | test RMSE 14.87 MAE 11.18 (17.7s)
+[final] abl_no_baseline seed 46: best epoch 11, val RMSE 13.72 MAE 10.34 | test RMSE 15.67 MAE 11.59 (17.8s)
+[final] abl_no_slope seed 42: best epoch 14, val RMSE 11.47 MAE 8.65 | test RMSE 15.24 MAE 11.72 (19.5s)
+[final] abl_no_slope seed 43: best epoch 9, val RMSE 12.14 MAE 9.05 | test RMSE 15.59 MAE 12.03 (15.4s)
+[final] abl_no_slope seed 44: best epoch 15, val RMSE 11.77 MAE 8.79 | test RMSE 16.37 MAE 11.64 (21.5s)
+[final] abl_no_slope seed 45: best epoch 7, val RMSE 12.48 MAE 9.06 | test RMSE 14.97 MAE 11.05 (15.2s)
+[final] abl_no_slope seed 46: best epoch 11, val RMSE 11.45 MAE 8.77 | test RMSE 15.31 MAE 11.30 (18.6s)
+[final] abl_no_hi_supervision seed 42: best epoch 7, val RMSE 11.45 MAE 8.78 | test RMSE 15.54 MAE 11.42 (14.3s)
+[final] abl_no_hi_supervision seed 43: best epoch 18, val RMSE 10.97 MAE 8.21 | test RMSE 14.86 MAE 10.82 (24.9s)
+[final] abl_no_hi_supervision seed 44: best epoch 9, val RMSE 11.36 MAE 8.53 | test RMSE 14.24 MAE 10.21 (16.5s)
+[final] abl_no_hi_supervision seed 45: best epoch 9, val RMSE 11.04 MAE 8.18 | test RMSE 14.68 MAE 10.29 (16.2s)
+[final] abl_no_hi_supervision seed 46: best epoch 10, val RMSE 11.66 MAE 8.79 | test RMSE 15.42 MAE 10.96 (17.4s)
+[final] abl_last_step_pooling seed 42: best epoch 17, val RMSE 11.15 MAE 8.45 | test RMSE 14.65 MAE 10.35 (22.5s)
+[final] abl_last_step_pooling seed 43: best epoch 15, val RMSE 11.28 MAE 8.45 | test RMSE 14.96 MAE 10.95 (21.0s)
+[final] abl_last_step_pooling seed 44: best epoch 19, val RMSE 11.04 MAE 7.99 | test RMSE 14.45 MAE 10.77 (28.1s)
+[final] abl_last_step_pooling seed 45: best epoch 16, val RMSE 11.42 MAE 8.42 | test RMSE 13.37 MAE 10.16 (1322.4s)
+[final] abl_last_step_pooling seed 46: best epoch 15, val RMSE 11.02 MAE 8.10 | test RMSE 14.64 MAE 10.50 (22.1s)
+[final] abl_concat_fusion seed 42: best epoch 6, val RMSE 11.82 MAE 8.88 | test RMSE 15.80 MAE 11.59 (14.7s)
+[final] abl_concat_fusion seed 43: best epoch 12, val RMSE 11.29 MAE 8.56 | test RMSE 15.56 MAE 11.33 (20.4s)
+[final] abl_concat_fusion seed 44: best epoch 8, val RMSE 11.04 MAE 8.28 | test RMSE 13.65 MAE 9.81 (16.3s)
+[final] abl_concat_fusion seed 45: best epoch 14, val RMSE 11.55 MAE 8.62 | test RMSE 14.59 MAE 10.71 (21.2s)
+[final] abl_concat_fusion seed 46: best epoch 10, val RMSE 11.50 MAE 8.55 | test RMSE 15.02 MAE 10.48 (17.9s)
+[final] abl_lstm_encoder seed 42: best epoch 18, val RMSE 12.09 MAE 8.68 | test RMSE 14.46 MAE 11.06 (21.6s)
+[final] abl_lstm_encoder seed 43: best epoch 14, val RMSE 11.68 MAE 8.50 | test RMSE 15.32 MAE 10.92 (18.3s)
+[final] abl_lstm_encoder seed 44: best epoch 18, val RMSE 10.89 MAE 7.87 | test RMSE 13.93 MAE 10.25 (21.6s)
+[final] abl_lstm_encoder seed 45: best epoch 12, val RMSE 11.38 MAE 8.19 | test RMSE 14.46 MAE 10.92 (16.9s)
+[final] abl_lstm_encoder seed 46: best epoch 15, val RMSE 11.48 MAE 8.33 | test RMSE 14.39 MAE 10.14 (18.5s)

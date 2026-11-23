@@ -1,0 +1,23 @@
+{
+  "dataset": "FD001",
+  "model": "LSTM baseline",
+  "seq_len": 30,
+  "rul_clip": 125,
+  "checkpoint_epoch": 11,
+  "validation": {
+    "n_windows": 3272,
+    "n_engines": 20,
+    "mae": 10.368962287902832,
+    "rmse": 14.396114349365234,
+    "target": "RUL clipped at 125"
+  },
+  "test": {
+    "n_engines": 100,
+    "mae": 11.817148451805116,
+    "rmse": 16.069191319486503,
+    "nasa_score": 504.56406597058464,
+    "mae_vs_clipped_true": 10.747148451805115,
+    "rmse_vs_clipped_true": 14.661090027187855,
+    "target": "official RUL_FD001.txt (unclipped) at last recorded cycle"
+  }
+}

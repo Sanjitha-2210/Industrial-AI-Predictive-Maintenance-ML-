@@ -1,0 +1,65 @@
+{
+  "criterion": "lowest mean validation RMSE over seeds (ties -> smaller lambdas)",
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "selected": {
+    "lambda_hi": 0.1,
+    "lambda_mono": 0.1,
+    "run": "datf_lh0.1_lm0.1"
+  },
+  "grid": [
+    {
+      "run": "datf_lh0.1_lm0.0",
+      "lambda_hi": 0.1,
+      "lambda_mono": 0.0,
+      "val_rmse_mean": 11.439338111877442,
+      "val_rmse_std": 0.24628587839473662,
+      "val_mae_mean": 8.543857192993164
+    },
+    {
+      "run": "datf_lh0.1_lm0.1",
+      "lambda_hi": 0.1,
+      "lambda_mono": 0.1,
+      "val_rmse_mean": 11.432094955444336,
+      "val_rmse_std": 0.2650071048957795,
+      "val_mae_mean": 8.614991569519043
+    },
+    {
+      "run": "datf_lh0.3_lm0.0",
+      "lambda_hi": 0.3,
+      "lambda_mono": 0.0,
+      "val_rmse_mean": 11.510408210754395,
+      "val_rmse_std": 0.45699592325670535,
+      "val_mae_mean": 8.633994865417481
+    },
+    {
+      "run": "datf_lh0.3_lm0.1",
+      "lambda_hi": 0.3,
+      "lambda_mono": 0.1,
+      "val_rmse_mean": 11.5280029296875,
+      "val_rmse_std": 0.33062444873737706,
+      "val_mae_mean": 8.650727653503418
+    },
+    {
+      "run": "datf_lh1.0_lm0.0",
+      "lambda_hi": 1.0,
+      "lambda_mono": 0.0,
+      "val_rmse_mean": 11.702423286437988,
+      "val_rmse_std": 0.335445979032123,
+      "val_mae_mean": 8.826204681396485
+    },
+    {
+      "run": "datf_lh1.0_lm0.1",
+      "lambda_hi": 1.0,
+      "lambda_mono": 0.1,
+      "val_rmse_mean": 11.682642555236816,
+      "val_rmse_std": 0.3708813501286129,
+      "val_mae_mean": 8.847062492370606
+    }
+  ]
+}

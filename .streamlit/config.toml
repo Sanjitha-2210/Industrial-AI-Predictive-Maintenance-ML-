@@ -1,0 +1,14 @@
+# Dark "control room" theme for the Engine Health Monitor dashboard (colours match dashboard/theme.py)
+[theme]
+base = "dark"
+primaryColor = "#3987e5"
+backgroundColor = "#121211"
+secondaryBackgroundColor = "#1a1a19"
+textColor = "#f4f4f1"
+font = "sans serif"
+
+[browser]
+gatherUsageStats = false
+
+[client]
+toolbarMode = "viewer"   # hide developer items such as "Deploy"

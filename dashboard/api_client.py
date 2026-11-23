@@ -103,6 +103,60 @@ class ApiClient:
     def test_predictions(self) -> dict:
         return self._request("GET", "/metrics/test-predictions", ("rows",))
 
+    # ---- v1 Multi-Industry endpoints ----
+    def upload_dataset(self, file_bytes: bytes, filename: str) -> dict:
+        ext = filename.lower()
+        mime = "application/zip" if ext.endswith(".zip") else ("text/plain" if ext.endswith(".txt") else "text/csv")
+        files = {"file": (filename, file_bytes, mime)}
+        return self._request("POST", "/api/v1/datasets/upload", ("status", "saved_path", "validation_report"), files=files)
+
+    def select_dataset_subset(self, subset: str, converted_csv_path: str, rul_file: str | None = None) -> dict:
+        payload = {"subset": subset, "converted_csv_path": converted_csv_path, "rul_file": rul_file}
+        return self._request("POST", "/api/v1/datasets/select-subset", ("status", "saved_path", "validation_report"), json=payload)
+
+    def validate_dataset(self, filepath: str, filename: str | None = None, machine_col: str | None = None,
+                         cycle_col: str | None = None, rul_col: str | None = None, required_seq_len: int = 30) -> dict:
+        payload = {"filepath": filepath, "filename": filename, "machine_col": machine_col,
+                   "cycle_col": cycle_col, "rul_col": rul_col, "required_seq_len": required_seq_len}
+        return self._request("POST", "/api/v1/datasets/validate", ("status", "columns", "issues"), json=payload)
+
+    def profile_dataset(self, filepath: str, sensor_columns: list[str], machine_col: str | None = None) -> dict:
+        payload = {"filepath": filepath, "sensor_columns": sensor_columns, "machine_col": machine_col}
+        return self._request("POST", "/api/v1/datasets/profile", ("sensor_distributions", "correlation_matrix"), json=payload)
+
+    def auto_map_columns(self, columns: list[str], machine_category_id: str | None = None) -> dict:
+        return self._request("POST", "/api/v1/datasets/auto-map", ("mappings",),
+                             json={"columns": columns, "machine_category_id": machine_category_id})
+
+    def list_industries(self) -> dict:
+        return self._request("GET", "/api/v1/industries", ("industries", "canonical_sensors"))
+
+    def list_models(self, industry: str | None = None, machine_category: str | None = None) -> dict:
+        params = {}
+        if industry: params["industry"] = industry
+        if machine_category: params["machine_category"] = machine_category
+        return self._request("GET", "/api/v1/models/registry", ("models",), params=params)
+
+    def get_model(self, model_id: str) -> dict:
+        return self._request("GET", f"/api/v1/models/{model_id}", ("model_id", "feature_schema"))
+
+    def train_model(self, req_data: dict) -> dict:
+        return self._request("POST", "/api/v1/models/train", ("status",), json=req_data)
+
+    def training_status(self, job_id: str) -> dict:
+        return self._request("GET", f"/api/v1/models/training/{job_id}", ("job_id", "status"))
+
+    def predict_universal(self, readings: list[dict] | None = None, model_id: str = "nasa_cmapss_lstm_v1",
+                          machine_id: str | None = None, filepath: str | None = None,
+                          column_mapping: dict | None = None, mc_samples: int = 30) -> dict:
+        payload = {"model_id": model_id, "machine_id": machine_id, "readings": readings,
+                   "filepath": filepath, "column_mapping": column_mapping, "mc_samples": mc_samples}
+        return self._request("POST", "/api/v1/predict", ("predicted_rul", "model_id", "explanation"), json=payload)
+
+
+    def prediction_history(self, limit: int = 50) -> dict:
+        return self._request("GET", "/api/v1/predictions/history", ("history",), params={"limit": limit})
+
 
 START_BACKEND_CMD = r".\.venv\Scripts\python.exe -m uvicorn backend.main:app --port 8000"
 

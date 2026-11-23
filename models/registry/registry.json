@@ -1,0 +1,709 @@
+{
+  "nasa_cmapss_lstm_v1": {
+    "model_id": "nasa_cmapss_lstm_v1",
+    "name": "NASA C-MAPSS FD001 Turbofan LSTM Baseline",
+    "industry": "Aerospace & Aviation",
+    "machine_category": "Turbofan Jet Engine",
+    "training_dataset": "NASA C-MAPSS FD001 (100 run-to-failure engines)",
+    "feature_schema": [
+      "op_setting_1",
+      "op_setting_2",
+      "sensor_2",
+      "sensor_3",
+      "sensor_4",
+      "sensor_6",
+      "sensor_7",
+      "sensor_8",
+      "sensor_9",
+      "sensor_11",
+      "sensor_12",
+      "sensor_13",
+      "sensor_14",
+      "sensor_15",
+      "sensor_17",
+      "sensor_20",
+      "sensor_21"
+    ],
+    "sequence_length": 30,
+    "rul_clip": 125,
+    "scaler_type": "StandardScaler (Z-Score)",
+    "architecture": "PyTorch 2-layer LSTM (64 hidden, dropout 0.2) + MLP head",
+    "training_date": "2026-09-30T15:00:00",
+    "evaluation_metrics": {
+      "rmse": 16.069191319486503,
+      "mae": 11.817148451805116,
+      "score": 482.1
+    },
+    "version": "1.0.0",
+    "status": "active",
+    "checkpoint_path": "models/checkpoints/lstm_best.pt",
+    "preprocessor_path": "data/processed/preprocessor.joblib",
+    "supports_uncertainty": true,
+    "sensor_mapping": {},
+    "description": "Official benchmark model trained on NASA C-MAPSS FD001 turbofan degradation data."
+  },
+  "model_centrifugal_pump_1ae90edf": {
+    "model_id": "model_centrifugal_pump_1ae90edf",
+    "name": "Test Pump LSTM",
+    "industry": "Water & Wastewater",
+    "machine_category": "Centrifugal Pump",
+    "training_dataset": "synthetic_pump_run_to_failure.csv",
+    "feature_schema": [
+      "vibration_rms",
+      "bearing_temp",
+      "discharge_pressure",
+      "motor_current",
+      "flow_rate"
+    ],
+    "sequence_length": 15,
+    "rul_clip": 100,
+    "scaler_type": "StandardScaler (Z-Score)",
+    "architecture": "PyTorch 2-layer LSTM (64 hidden, dropout 0.2)",
+    "training_date": "2026-11-23T21:12:03.534998",
+    "evaluation_metrics": {
+      "rmse": 12.69,
+      "mae": 10.59,
+      "r2": 0.7903,
+      "val_loss": 0.01611
+    },
+    "version": "1.0.0",
+    "status": "active",
+    "checkpoint_path": "models/checkpoints/adapted/model_centrifugal_pump_1ae90edf/model.pt",
+    "preprocessor_path": "models/checkpoints/adapted/model_centrifugal_pump_1ae90edf/preprocessor.joblib",
+    "supports_uncertainty": true,
+    "sensor_mapping": {
+      "vibration_rms": "vibration_rms",
+      "bearing_temp": "bearing_temp",
+      "suction_pressure": "discharge_pressure",
+      "motor_current": "motor_current",
+      "flow_rate": "flow_rate"
+    },
+    "description": "Adapted model for Centrifugal Pump trained on synthetic_pump_run_to_failure.csv."
+  },
+  "model_centrifugal_pump_ec38067d": {
+    "model_id": "model_centrifugal_pump_ec38067d",
+    "name": "Test Pump LSTM",
+    "industry": "Water & Wastewater",
+    "machine_category": "Centrifugal Pump",
+    "training_dataset": "synthetic_pump_run_to_failure.csv",
+    "feature_schema": [
+      "vibration_rms",
+      "bearing_temp",
+      "discharge_pressure",
+      "motor_current",
+      "flow_rate"
+    ],
+    "sequence_length": 15,
+    "rul_clip": 100,
+    "scaler_type": "StandardScaler (Z-Score)",
+    "architecture": "PyTorch 2-layer LSTM (64 hidden, dropout 0.2)",
+    "training_date": "2026-11-23T21:23:42.418239",
+    "evaluation_metrics": {
+      "rmse": 12.69,
+      "mae": 10.59,
+      "r2": 0.7903,
+      "val_loss": 0.01611
+    },
+    "version": "1.0.0",
+    "status": "active",
+    "checkpoint_path": "models/checkpoints/adapted/model_centrifugal_pump_ec38067d/model.pt",
+    "preprocessor_path": "models/checkpoints/adapted/model_centrifugal_pump_ec38067d/preprocessor.joblib",
+    "supports_uncertainty": true,
+    "sensor_mapping": {
+      "vibration_rms": "vibration_rms",
+      "bearing_temp": "bearing_temp",
+      "suction_pressure": "discharge_pressure",
+      "motor_current": "motor_current",
+      "flow_rate": "flow_rate"
+    },
+    "description": "Adapted model for Centrifugal Pump trained on synthetic_pump_run_to_failure.csv."
+  },
+  "model_centrifugal_pump_9226efbb": {
+    "model_id": "model_centrifugal_pump_9226efbb",
+    "name": "Test Pump LSTM",
+    "industry": "Water & Wastewater",
+    "machine_category": "Centrifugal Pump",
+    "training_dataset": "synthetic_pump_run_to_failure.csv",
+    "feature_schema": [
+      "vibration_rms",
+      "bearing_temp",
+      "discharge_pressure",
+      "motor_current",
+      "flow_rate"
+    ],
+    "sequence_length": 15,
+    "rul_clip": 100,
+    "scaler_type": "StandardScaler (Z-Score)",
+    "architecture": "PyTorch 2-layer LSTM (64 hidden, dropout 0.2)",
+    "training_date": "2026-11-23T21:24:20.334048",
+    "evaluation_metrics": {
+      "rmse": 12.69,
+      "mae": 10.59,
+      "r2": 0.7903,
+      "val_loss": 0.01611
+    },
+    "version": "1.0.0",
+    "status": "active",
+    "checkpoint_path": "models/checkpoints/adapted/model_centrifugal_pump_9226efbb/model.pt",
+    "preprocessor_path": "models/checkpoints/adapted/model_centrifugal_pump_9226efbb/preprocessor.joblib",
+    "supports_uncertainty": true,
+    "sensor_mapping": {
+      "vibration_rms": "vibration_rms",
+      "bearing_temp": "bearing_temp",
+      "suction_pressure": "discharge_pressure",
+      "motor_current": "motor_current",
+      "flow_rate": "flow_rate"
+    },
+    "description": "Adapted model for Centrifugal Pump trained on synthetic_pump_run_to_failure.csv."
+  },
+  "model_centrifugal_pump_360be8c9": {
+    "model_id": "model_centrifugal_pump_360be8c9",
+    "name": "Test Pump LSTM",
+    "industry": "Water & Wastewater",
+    "machine_category": "Centrifugal Pump",
+    "training_dataset": "synthetic_pump_run_to_failure.csv",
+    "feature_schema": [
+      "vibration_rms",
+      "bearing_temp",
+      "discharge_pressure",
+      "motor_current",
+      "flow_rate"
+    ],
+    "sequence_length": 15,
+    "rul_clip": 100,
+    "scaler_type": "StandardScaler (Z-Score)",
+    "architecture": "PyTorch 2-layer LSTM (64 hidden, dropout 0.2)",
+    "training_date": "2026-11-23T21:30:07.321500",
+    "evaluation_metrics": {
+      "rmse": 12.69,
+      "mae": 10.59,
+      "r2": 0.7903,
+      "val_loss": 0.01611
+    },
+    "version": "1.0.0",
+    "status": "active",
+    "checkpoint_path": "models/checkpoints/adapted/model_centrifugal_pump_360be8c9/model.pt",
+    "preprocessor_path": "models/checkpoints/adapted/model_centrifugal_pump_360be8c9/preprocessor.joblib",
+    "supports_uncertainty": true,
+    "sensor_mapping": {
+      "vibration_rms": "vibration_rms",
+      "bearing_temp": "bearing_temp",
+      "suction_pressure": "discharge_pressure",
+      "motor_current": "motor_current",
+      "flow_rate": "flow_rate"
+    },
+    "description": "Adapted model for Centrifugal Pump trained on synthetic_pump_run_to_failure.csv."
+  },
+  "model_centrifugal_pump_362726c1": {
+    "model_id": "model_centrifugal_pump_362726c1",
+    "name": "Test Pump LSTM",
+    "industry": "Water & Wastewater",
+    "machine_category": "Centrifugal Pump",
+    "training_dataset": "synthetic_pump_run_to_failure.csv",
+    "feature_schema": [
+      "vibration_rms",
+      "bearing_temp",
+      "discharge_pressure",
+      "motor_current",
+      "flow_rate"
+    ],
+    "sequence_length": 15,
+    "rul_clip": 100,
+    "scaler_type": "StandardScaler (Z-Score)",
+    "architecture": "PyTorch 2-layer LSTM (64 hidden, dropout 0.2)",
+    "training_date": "2026-11-23T21:31:24.329493",
+    "evaluation_metrics": {
+      "rmse": 12.69,
+      "mae": 10.59,
+      "r2": 0.7903,
+      "val_loss": 0.01611
+    },
+    "version": "1.0.0",
+    "status": "active",
+    "checkpoint_path": "models/checkpoints/adapted/model_centrifugal_pump_362726c1/model.pt",
+    "preprocessor_path": "models/checkpoints/adapted/model_centrifugal_pump_362726c1/preprocessor.joblib",
+    "supports_uncertainty": true,
+    "sensor_mapping": {
+      "vibration_rms": "vibration_rms",
+      "bearing_temp": "bearing_temp",
+      "suction_pressure": "discharge_pressure",
+      "motor_current": "motor_current",
+      "flow_rate": "flow_rate"
+    },
+    "description": "Adapted model for Centrifugal Pump trained on synthetic_pump_run_to_failure.csv."
+  },
+  "model_centrifugal_pump_a523ae59": {
+    "model_id": "model_centrifugal_pump_a523ae59",
+    "name": "Test Pump LSTM",
+    "industry": "Water & Wastewater",
+    "machine_category": "Centrifugal Pump",
+    "training_dataset": "synthetic_pump_run_to_failure.csv",
+    "feature_schema": [
+      "vibration_rms",
+      "bearing_temp",
+      "discharge_pressure",
+      "motor_current",
+      "flow_rate"
+    ],
+    "sequence_length": 15,
+    "rul_clip": 100,
+    "scaler_type": "StandardScaler (Z-Score)",
+    "architecture": "PyTorch 2-layer LSTM (64 hidden, dropout 0.2)",
+    "training_date": "2026-11-23T22:03:56.443013",
+    "evaluation_metrics": {
+      "rmse": 12.69,
+      "mae": 10.59,
+      "r2": 0.7903,
+      "val_loss": 0.01611
+    },
+    "version": "1.0.0",
+    "status": "active",
+    "checkpoint_path": "models/checkpoints/adapted/model_centrifugal_pump_a523ae59/model.pt",
+    "preprocessor_path": "models/checkpoints/adapted/model_centrifugal_pump_a523ae59/preprocessor.joblib",
+    "supports_uncertainty": true,
+    "sensor_mapping": {
+      "vibration_rms": "vibration_rms",
+      "bearing_temp": "bearing_temp",
+      "suction_pressure": "discharge_pressure",
+      "motor_current": "motor_current",
+      "flow_rate": "flow_rate"
+    },
+    "description": "Adapted model for Centrifugal Pump trained on synthetic_pump_run_to_failure.csv."
+  },
+  "model_centrifugal_pump_cc383b9e": {
+    "model_id": "model_centrifugal_pump_cc383b9e",
+    "name": "Adapted Centrifugal Pump Model",
+    "industry": "Water & Wastewater",
+    "machine_category": "Centrifugal Pump",
+    "training_dataset": "synthetic_pump_run_to_failure.csv",
+    "feature_schema": [
+      "sensor_vibration",
+      "sensor_temperature",
+      "sensor_pressure",
+      "sensor_current",
+      "sensor_flow"
+    ],
+    "sequence_length": 20,
+    "rul_clip": 100,
+    "scaler_type": "StandardScaler (Z-Score)",
+    "architecture": "NumPy 2-layer LSTM (32 hidden, Adam BPTT)",
+    "training_date": "2026-11-24T01:12:32.913546",
+    "evaluation_metrics": {
+      "rmse": 6.38,
+      "mae": 5.74,
+      "r2": 0.947,
+      "val_loss": 0.00407
+    },
+    "version": "1.0.0",
+    "status": "active",
+    "checkpoint_path": "models/checkpoints/adapted/model_centrifugal_pump_cc383b9e/model.pt",
+    "preprocessor_path": "models/checkpoints/adapted/model_centrifugal_pump_cc383b9e/preprocessor.joblib",
+    "supports_uncertainty": true,
+    "sensor_mapping": {
+      "vibration_rms": "sensor_vibration",
+      "bearing_temp": "sensor_temperature",
+      "discharge_pressure": "sensor_pressure",
+      "motor_current": "sensor_current",
+      "flow_rate": "sensor_flow"
+    },
+    "description": "Adapted model for Centrifugal Pump trained on synthetic_pump_run_to_failure.csv."
+  },
+  "model_centrifugal_pump_1b902a35": {
+    "model_id": "model_centrifugal_pump_1b902a35",
+    "name": "Test Pump LSTM",
+    "industry": "Water & Wastewater",
+    "machine_category": "Centrifugal Pump",
+    "training_dataset": "synthetic_pump_run_to_failure.csv",
+    "feature_schema": [
+      "vibration_rms",
+      "bearing_temp",
+      "discharge_pressure",
+      "motor_current",
+      "flow_rate"
+    ],
+    "sequence_length": 15,
+    "rul_clip": 100,
+    "scaler_type": "StandardScaler (Z-Score)",
+    "architecture": "NumPy 2-layer LSTM (64 hidden, Adam BPTT)",
+    "training_date": "2026-11-24T01:14:21.688631",
+    "evaluation_metrics": {
+      "rmse": 8.16,
+      "mae": 7.23,
+      "r2": 0.9132,
+      "val_loss": 0.00667
+    },
+    "version": "1.0.0",
+    "status": "active",
+    "checkpoint_path": "models/checkpoints/adapted/model_centrifugal_pump_1b902a35/model.pt",
+    "preprocessor_path": "models/checkpoints/adapted/model_centrifugal_pump_1b902a35/preprocessor.joblib",
+    "supports_uncertainty": true,
+    "sensor_mapping": {
+      "vibration_rms": "vibration_rms",
+      "bearing_temp": "bearing_temp",
+      "suction_pressure": "discharge_pressure",
+      "motor_current": "motor_current",
+      "flow_rate": "flow_rate"
+    },
+    "description": "Adapted model for Centrifugal Pump trained on synthetic_pump_run_to_failure.csv."
+  },
+  "model_centrifugal_pump_d2ec207b": {
+    "model_id": "model_centrifugal_pump_d2ec207b",
+    "name": "Test Pump LSTM",
+    "industry": "Water & Wastewater",
+    "machine_category": "Centrifugal Pump",
+    "training_dataset": "synthetic_pump_run_to_failure.csv",
+    "feature_schema": [
+      "vibration_rms",
+      "bearing_temp",
+      "discharge_pressure",
+      "motor_current",
+      "flow_rate"
+    ],
+    "sequence_length": 15,
+    "rul_clip": 100,
+    "scaler_type": "StandardScaler (Z-Score)",
+    "architecture": "NumPy 2-layer LSTM (64 hidden, Adam BPTT)",
+    "training_date": "2026-11-24T01:14:58.955960",
+    "evaluation_metrics": {
+      "rmse": 8.16,
+      "mae": 7.23,
+      "r2": 0.9132,
+      "val_loss": 0.00667
+    },
+    "version": "1.0.0",
+    "status": "active",
+    "checkpoint_path": "models/checkpoints/adapted/model_centrifugal_pump_d2ec207b/model.pt",
+    "preprocessor_path": "models/checkpoints/adapted/model_centrifugal_pump_d2ec207b/preprocessor.joblib",
+    "supports_uncertainty": true,
+    "sensor_mapping": {
+      "vibration_rms": "vibration_rms",
+      "bearing_temp": "bearing_temp",
+      "suction_pressure": "discharge_pressure",
+      "motor_current": "motor_current",
+      "flow_rate": "flow_rate"
+    },
+    "description": "Adapted model for Centrifugal Pump trained on synthetic_pump_run_to_failure.csv."
+  },
+  "model_centrifugal_pump_7001f891": {
+    "model_id": "model_centrifugal_pump_7001f891",
+    "name": "Adapted synthetic_motor Model",
+    "industry": "Water & Wastewater",
+    "machine_category": "Centrifugal Pump",
+    "training_dataset": "f8fb7c7d_synthetic_motor_incompatible.csv",
+    "feature_schema": [
+      "vibration_rms",
+      "bearing_temp",
+      "discharge_pressure",
+      "rotational_speed"
+    ],
+    "sequence_length": 30,
+    "rul_clip": 125,
+    "scaler_type": "StandardScaler (Z-Score)",
+    "architecture": "NumPy 2-layer LSTM (64 hidden, Adam BPTT)",
+    "training_date": "2026-11-24T01:18:30.628166",
+    "evaluation_metrics": {
+      "rmse": 3.01,
+      "mae": 1.69,
+      "r2": 0.0,
+      "val_loss": 0.00111
+    },
+    "version": "1.0.0",
+    "status": "active",
+    "checkpoint_path": "models/checkpoints/adapted/model_centrifugal_pump_7001f891/model.pt",
+    "preprocessor_path": "models/checkpoints/adapted/model_centrifugal_pump_7001f891/preprocessor.joblib",
+    "supports_uncertainty": true,
+    "sensor_mapping": {
+      "vib_axial": "vibration_rms",
+      "temp_ambient": "bearing_temp",
+      "amp_phase_u": "discharge_pressure",
+      "rpm_speed": "rotational_speed"
+    },
+    "description": "Adapted model for Centrifugal Pump trained on f8fb7c7d_synthetic_motor_incompatible.csv."
+  },
+  "model_centrifugal_pump_d9dc87af": {
+    "model_id": "model_centrifugal_pump_d9dc87af",
+    "name": "Adapted synthetic_pump_ Model",
+    "industry": "Water & Wastewater",
+    "machine_category": "Centrifugal Pump",
+    "training_dataset": "77ba4c87_synthetic_pump_run_to_failure.csv",
+    "feature_schema": [
+      "vibration_rms",
+      "bearing_temp",
+      "discharge_pressure",
+      "motor_current",
+      "flow_rate"
+    ],
+    "sequence_length": 30,
+    "rul_clip": 125,
+    "scaler_type": "StandardScaler (Z-Score)",
+    "architecture": "NumPy 2-layer LSTM (64 hidden, Adam BPTT)",
+    "training_date": "2026-11-24T01:20:04.495501",
+    "evaluation_metrics": {
+      "rmse": 6.07,
+      "mae": 5.54,
+      "r2": 0.952,
+      "val_loss": 0.00236
+    },
+    "version": "1.0.0",
+    "status": "active",
+    "checkpoint_path": "models/checkpoints/adapted/model_centrifugal_pump_d9dc87af/model.pt",
+    "preprocessor_path": "models/checkpoints/adapted/model_centrifugal_pump_d9dc87af/preprocessor.joblib",
+    "supports_uncertainty": true,
+    "sensor_mapping": {
+      "vibration_rms": "vibration_rms",
+      "bearing_temp": "bearing_temp",
+      "suction_pressure": "discharge_pressure",
+      "motor_current": "motor_current",
+      "flow_rate": "flow_rate"
+    },
+    "description": "Adapted model for Centrifugal Pump trained on 77ba4c87_synthetic_pump_run_to_failure.csv."
+  },
+  "model_centrifugal_pump_9084fece": {
+    "model_id": "model_centrifugal_pump_9084fece",
+    "name": "Adapted synthetic_motor Model",
+    "industry": "Water & Wastewater",
+    "machine_category": "Centrifugal Pump",
+    "training_dataset": "d758be9d_synthetic_motor_incompatible.csv",
+    "feature_schema": [
+      "vibration_rms",
+      "bearing_temp",
+      "discharge_pressure",
+      "rotational_speed"
+    ],
+    "sequence_length": 30,
+    "rul_clip": 125,
+    "scaler_type": "StandardScaler (Z-Score)",
+    "architecture": "NumPy 2-layer LSTM (64 hidden, Adam BPTT)",
+    "training_date": "2026-11-24T01:22:27.870915",
+    "evaluation_metrics": {
+      "rmse": 3.01,
+      "mae": 1.69,
+      "r2": 0.0,
+      "val_loss": 0.00111
+    },
+    "version": "1.0.0",
+    "status": "active",
+    "checkpoint_path": "models/checkpoints/adapted/model_centrifugal_pump_9084fece/model.pt",
+    "preprocessor_path": "models/checkpoints/adapted/model_centrifugal_pump_9084fece/preprocessor.joblib",
+    "supports_uncertainty": true,
+    "sensor_mapping": {
+      "vib_axial": "vibration_rms",
+      "temp_ambient": "bearing_temp",
+      "amp_phase_u": "discharge_pressure",
+      "rpm_speed": "rotational_speed"
+    },
+    "description": "Adapted model for Centrifugal Pump trained on d758be9d_synthetic_motor_incompatible.csv."
+  },
+  "model_centrifugal_pump_10483af9": {
+    "model_id": "model_centrifugal_pump_10483af9",
+    "name": "Test Pump LSTM",
+    "industry": "Water & Wastewater",
+    "machine_category": "Centrifugal Pump",
+    "training_dataset": "synthetic_pump_run_to_failure.csv",
+    "feature_schema": [
+      "vibration_rms",
+      "bearing_temp",
+      "discharge_pressure",
+      "motor_current",
+      "flow_rate"
+    ],
+    "sequence_length": 15,
+    "rul_clip": 100,
+    "scaler_type": "StandardScaler (Z-Score)",
+    "architecture": "NumPy 2-layer LSTM (64 hidden, Adam BPTT)",
+    "training_date": "2026-11-24T01:26:33.443344",
+    "evaluation_metrics": {
+      "rmse": 8.16,
+      "mae": 7.23,
+      "r2": 0.9132,
+      "val_loss": 0.00667
+    },
+    "version": "1.0.0",
+    "status": "active",
+    "checkpoint_path": "models/checkpoints/adapted/model_centrifugal_pump_10483af9/model.pt",
+    "preprocessor_path": "models/checkpoints/adapted/model_centrifugal_pump_10483af9/preprocessor.joblib",
+    "supports_uncertainty": true,
+    "sensor_mapping": {
+      "vibration_rms": "vibration_rms",
+      "bearing_temp": "bearing_temp",
+      "suction_pressure": "discharge_pressure",
+      "motor_current": "motor_current",
+      "flow_rate": "flow_rate"
+    },
+    "description": "Adapted model for Centrifugal Pump trained on synthetic_pump_run_to_failure.csv."
+  },
+  "model_centrifugal_pump_a668af98": {
+    "model_id": "model_centrifugal_pump_a668af98",
+    "name": "Test Pump LSTM",
+    "industry": "Water & Wastewater",
+    "machine_category": "Centrifugal Pump",
+    "training_dataset": "synthetic_pump_run_to_failure.csv",
+    "feature_schema": [
+      "vibration_rms",
+      "bearing_temp",
+      "discharge_pressure",
+      "motor_current",
+      "flow_rate"
+    ],
+    "sequence_length": 15,
+    "rul_clip": 100,
+    "scaler_type": "StandardScaler (Z-Score)",
+    "architecture": "NumPy 2-layer LSTM (64 hidden, Adam BPTT)",
+    "training_date": "2026-11-24T01:51:06.435602",
+    "evaluation_metrics": {
+      "rmse": 8.16,
+      "mae": 7.23,
+      "r2": 0.9132,
+      "val_loss": 0.00667
+    },
+    "version": "1.0.0",
+    "status": "active",
+    "checkpoint_path": "models/checkpoints/adapted/model_centrifugal_pump_a668af98/model.pt",
+    "preprocessor_path": "models/checkpoints/adapted/model_centrifugal_pump_a668af98/preprocessor.joblib",
+    "supports_uncertainty": true,
+    "sensor_mapping": {
+      "vibration_rms": "vibration_rms",
+      "bearing_temp": "bearing_temp",
+      "suction_pressure": "discharge_pressure",
+      "motor_current": "motor_current",
+      "flow_rate": "flow_rate"
+    },
+    "description": "Adapted model for Centrifugal Pump trained on synthetic_pump_run_to_failure.csv."
+  },
+  "model_centrifugal_pump_d54b812c": {
+    "model_id": "model_centrifugal_pump_d54b812c",
+    "name": "Test Pump LSTM",
+    "industry": "Water & Wastewater",
+    "machine_category": "Centrifugal Pump",
+    "training_dataset": "synthetic_pump_run_to_failure.csv",
+    "feature_schema": [
+      "vibration_rms",
+      "bearing_temp",
+      "discharge_pressure",
+      "motor_current",
+      "flow_rate"
+    ],
+    "sequence_length": 15,
+    "rul_clip": 100,
+    "scaler_type": "StandardScaler (Z-Score)",
+    "architecture": "NumPy 2-layer LSTM (64 hidden, Adam BPTT)",
+    "training_date": "2026-11-24T02:08:37.544032",
+    "evaluation_metrics": {
+      "rmse": 8.16,
+      "mae": 7.23,
+      "r2": 0.9132,
+      "val_loss": 0.00667
+    },
+    "version": "1.0.0",
+    "status": "active",
+    "checkpoint_path": "models/checkpoints/adapted/model_centrifugal_pump_d54b812c/model.pt",
+    "preprocessor_path": "models/checkpoints/adapted/model_centrifugal_pump_d54b812c/preprocessor.joblib",
+    "supports_uncertainty": true,
+    "sensor_mapping": {
+      "vibration_rms": "vibration_rms",
+      "bearing_temp": "bearing_temp",
+      "suction_pressure": "discharge_pressure",
+      "motor_current": "motor_current",
+      "flow_rate": "flow_rate"
+    },
+    "description": "Adapted model for Centrifugal Pump trained on synthetic_pump_run_to_failure.csv."
+  },
+  "model_centrifugal_pump_899237cf": {
+    "model_id": "model_centrifugal_pump_899237cf",
+    "name": "Test Pump LSTM",
+    "industry": "Water & Wastewater",
+    "machine_category": "Centrifugal Pump",
+    "training_dataset": "synthetic_pump_run_to_failure.csv",
+    "feature_schema": [
+      "vibration_rms",
+      "bearing_temp",
+      "discharge_pressure",
+      "motor_current",
+      "flow_rate"
+    ],
+    "sequence_length": 15,
+    "rul_clip": 100,
+    "scaler_type": "StandardScaler (Z-Score)",
+    "architecture": "NumPy 2-layer LSTM (64 hidden, Adam BPTT)",
+    "training_date": "2026-11-24T02:09:21.519061",
+    "evaluation_metrics": {
+      "rmse": 8.16,
+      "mae": 7.23,
+      "r2": 0.9132,
+      "val_loss": 0.00667
+    },
+    "version": "1.0.0",
+    "status": "active",
+    "checkpoint_path": "models/checkpoints/adapted/model_centrifugal_pump_899237cf/model.pt",
+    "preprocessor_path": "models/checkpoints/adapted/model_centrifugal_pump_899237cf/preprocessor.joblib",
+    "supports_uncertainty": true,
+    "sensor_mapping": {
+      "vibration_rms": "vibration_rms",
+      "bearing_temp": "bearing_temp",
+      "suction_pressure": "discharge_pressure",
+      "motor_current": "motor_current",
+      "flow_rate": "flow_rate"
+    },
+    "description": "Adapted model for Centrifugal Pump trained on synthetic_pump_run_to_failure.csv."
+  },
+  "model_centrifugal_pump_3b9cfb78": {
+    "model_id": "model_centrifugal_pump_3b9cfb78",
+    "name": "Adapted converted_algae Model",
+    "industry": "Water & Wastewater",
+    "machine_category": "Centrifugal Pump",
+    "training_dataset": "4c1d7646_converted_algae.csv",
+    "feature_schema": [
+      "bearing_temp"
+    ],
+    "sequence_length": 30,
+    "rul_clip": 125,
+    "scaler_type": "StandardScaler (Z-Score)",
+    "architecture": "NumPy 2-layer LSTM (64 hidden, Adam BPTT)",
+    "training_date": "2026-11-24T02:12:16.386243",
+    "evaluation_metrics": {
+      "rmse": 26.58,
+      "mae": 20.48,
+      "r2": 0.595,
+      "val_loss": 0.04521
+    },
+    "version": "1.0.0",
+    "status": "active",
+    "checkpoint_path": "models/checkpoints/adapted/model_centrifugal_pump_3b9cfb78/model.pt",
+    "preprocessor_path": "models/checkpoints/adapted/model_centrifugal_pump_3b9cfb78/preprocessor.joblib",
+    "supports_uncertainty": true,
+    "sensor_mapping": {
+      "temperature": "bearing_temp"
+    },
+    "description": "Adapted model for Centrifugal Pump trained on 4c1d7646_converted_algae.csv."
+  },
+  "model_centrifugal_pump_6f0d572d": {
+    "model_id": "model_centrifugal_pump_6f0d572d",
+    "name": "Adapted converted_algae Model",
+    "industry": "Water & Wastewater",
+    "machine_category": "Centrifugal Pump",
+    "training_dataset": "77f18c41_converted_algae.csv",
+    "feature_schema": [
+      "bearing_temp"
+    ],
+    "sequence_length": 30,
+    "rul_clip": 125,
+    "scaler_type": "StandardScaler (Z-Score)",
+    "architecture": "NumPy 2-layer LSTM (64 hidden, Adam BPTT)",
+    "training_date": "2026-11-24T02:17:38.339007",
+    "evaluation_metrics": {
+      "rmse": 26.58,
+      "mae": 20.48,
+      "r2": 0.595,
+      "val_loss": 0.04521
+    },
+    "version": "1.0.0",
+    "status": "active",
+    "checkpoint_path": "models/checkpoints/adapted/model_centrifugal_pump_6f0d572d/model.pt",
+    "preprocessor_path": "models/checkpoints/adapted/model_centrifugal_pump_6f0d572d/preprocessor.joblib",
+    "supports_uncertainty": true,
+    "sensor_mapping": {
+      "temperature": "bearing_temp"
+    },
+    "description": "Adapted model for Centrifugal Pump trained on 77f18c41_converted_algae.csv."
+  }
+}

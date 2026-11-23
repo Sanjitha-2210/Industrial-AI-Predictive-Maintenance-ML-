@@ -26,6 +26,9 @@ from components import (STATE_EXPLANATION, banner_html, evidence_html, help_html
                         uncertainty_range_html)
 from table_view import TABLE_CSS, html_table, records_to_columns  # noqa: E402
 from theme import CSS, INFO, NEUTRAL_LINE, OFFLINE, ONLINE, SERIES, STATUS, style_fig  # noqa: E402
+from adaptation_ui import (render_mode2_upload, render_mode2_predict, render_mode3_mapping,  # noqa: E402
+                           render_mode3_profiling, render_mode3_training, render_mode3_registry,
+                           render_mode3_predict)
 
 API_URL = api_url_from_env()
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -62,13 +65,12 @@ st.set_page_config(page_title="Engine Health Monitor", page_icon="⚙️", layou
 st.markdown(CSS + TABLE_CSS, unsafe_allow_html=True)
 
 
-# ---------------- API access (cached; errors are never cached, so a restarted backend is picked up) ----------------
-@st.cache_resource
+# ---------------- API access (fresh client with latest methods) ----------------
 def get_client(url: str) -> ApiClient:
     return ApiClient(url)
 
 
-api = get_client(API_URL)
+api = ApiClient(API_URL)
 
 
 @st.cache_data(ttl=300, show_spinner=False)
@@ -303,9 +305,26 @@ def prediction_unavailable(ctx):
 
 
 # ================= sidebar + backend connection =================
-md("<div class='brand'><div class='brand-title'>ENGINE HEALTH MONITOR</div>"
-   "<div class='brand-sub'>Predictive Maintenance Center</div></div>", st.sidebar)
-page = st.sidebar.radio("Navigation", PAGES, key="nav", label_visibility="collapsed")
+md("<div class='brand'><div class='brand-title'>INDUSTRIAL AI PLATFORM</div>"
+   "<div class='brand-sub'>Multi-Industry Predictive Maintenance</div></div>", st.sidebar)
+
+OPERATING_MODES = [
+    "✈️ Mode 1: NASA C-MAPSS Demo",
+    "📁 Mode 2: External Dataset Upload",
+    "🏭 Mode 3: Industry Adaptation & Training",
+]
+selected_mode = st.sidebar.selectbox("Platform Operation Mode", OPERATING_MODES, index=0, key="platform_mode")
+
+page = "Overview"
+page_m2 = "Dataset Upload & Validation"
+page_m3 = "Industry & Sensor Mapping"
+
+if selected_mode == "✈️ Mode 1: NASA C-MAPSS Demo":
+    page = st.sidebar.radio("Navigation", PAGES, key="nav", label_visibility="collapsed")
+elif selected_mode == "📁 Mode 2: External Dataset Upload":
+    page_m2 = st.sidebar.radio("Mode 2 Navigation", ["Dataset Upload & Validation", "Model Safety Shield & Predict"], key="nav_mode2")
+else:
+    page_m3 = st.sidebar.radio("Mode 3 Navigation", ["Industry & Sensor Mapping", "Dataset Profiling & Heatmap", "Model Adaptation Training", "Model Registry & Comparison", "Universal RUL Prediction"], key="nav_mode3")
 
 try:
     health = api.health()
@@ -810,5 +829,15 @@ def page_about():
         st.caption("Serving path for live predictions: Streamlit → api_client (HTTP) → FastAPI → LSTM baseline.")
 
 
-{"Overview": page_overview, "Engine Monitor": page_engine_monitor, "RUL Analysis": page_rul_analysis,
- "Simulation": page_simulation, "Model Performance": page_model_performance, "About": page_about}[page]()
+if selected_mode == "✈️ Mode 1: NASA C-MAPSS Demo":
+    {"Overview": page_overview, "Engine Monitor": page_engine_monitor, "RUL Analysis": page_rul_analysis,
+     "Simulation": page_simulation, "Model Performance": page_model_performance, "About": page_about}[page]()
+elif selected_mode == "📁 Mode 2: External Dataset Upload":
+    {"Dataset Upload & Validation": lambda: render_mode2_upload(api),
+     "Model Safety Shield & Predict": lambda: render_mode2_predict(api)}[page_m2]()
+else:
+    {"Industry & Sensor Mapping": lambda: render_mode3_mapping(api),
+     "Dataset Profiling & Heatmap": lambda: render_mode3_profiling(api),
+     "Model Adaptation Training": lambda: render_mode3_training(api),
+     "Model Registry & Comparison": lambda: render_mode3_registry(api),
+     "Universal RUL Prediction": lambda: render_mode3_predict(api)}[page_m3]()

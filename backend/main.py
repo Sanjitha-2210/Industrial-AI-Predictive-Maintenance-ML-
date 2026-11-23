@@ -20,12 +20,15 @@ from src.data.table import engine as engine_rows, from_records, n_rows, tail, to
 from src.demo import SIMULATED_LABEL, STAGE_RUL_BANDS, get_profile, simulate_engine
 from src.health_state import HEALTH_STATES, assess_engine, load_params
 from src.predict import ModelNotAvailableError, Predictor
+from backend.api_v1 import router as api_v1_router
 
 app = FastAPI(title="Industrial RUL Prediction API",
               description="LSTM-based Remaining Useful Life prediction on NASA C-MAPSS FD001 with data-driven health "
                           "states (engine-relative sensor degradation index; fleet-level Near-Failure boundary of 45 "
                           "cycles, which is not an individual-engine failure threshold or safety limit).",
               version="1.0.0")
+
+app.include_router(api_v1_router, prefix="/api/v1")
 
 FEATURES = OP_COLS + SENSOR_COLS
 

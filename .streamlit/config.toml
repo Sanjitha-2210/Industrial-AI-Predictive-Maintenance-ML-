@@ -10,5 +10,8 @@ font = "sans serif"
 [browser]
 gatherUsageStats = false
 
+[server]
+maxUploadSize = 2048   # Support large dataset uploads up to 2 GB
+
 [client]
 toolbarMode = "viewer"   # hide developer items such as "Deploy"

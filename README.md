@@ -1,25 +1,102 @@
-# Industrial AI Predictive Maintenance – Remaining Useful Life (RUL)
+# Industrial AI – Multi-Industry Predictive Maintenance Platform
 
-Degradation-aware RUL prediction for turbofan engines using the **NASA C-MAPSS FD001** dataset.
-Working pipeline: **LSTM baseline** → FastAPI backend (runs all inference) ⇄ HTTP ⇄ Streamlit dashboard.
-**DATF-Net** (research model: TCN encoder + degradation-aware branch + gated fusion) is trained and evaluated in a separate
-experiment pipeline (see "DATF-Net experiments"); it is **not** used by the API or dashboard.
+A modular, production-ready predictive maintenance and Remaining Useful Life (RUL) estimation platform supporting **NASA C-MAPSS Turbofans**, **External Asset Datasets**, and **Multi-Industry Adaptation** (Pumps, Motors, Turbines, and Manufacturing Machinery).
+
+Working pipeline: **LSTM Baseline & Adapted Neural Networks** → **FastAPI Backend (`/` & `/api/v1/`)** ⇄ **HTTP** ⇄ **Streamlit Control Room Dashboard**.
+
+---
+
+## 🌟 The Three Operation Modes
+
+| Mode | Purpose | Key Capabilities |
+|---|---|---|
+| **Mode 1: NASA C-MAPSS Demo** | Benchmark Demonstration | Preserves the NASA FD001 LSTM baseline, data-driven health states, uncertainty estimation, and interactive what-if simulations. |
+| **Mode 2: External Dataset Upload** | Quality Gate & Safety Shield | Upload arbitrary machine CSVs; validates structure, missing values, duplicates, and sequence lengths. Strictly blocks incompatible datasets from running blindly against the turbofan model. |
+| **Mode 3: Industry Adaptation & Training** | Multi-Industry Onboarding | Configure canonical sensor mappings, generate statistical profiling with correlation heatmaps, train asset-split adapted models (zero data leakage), and manage models in a versioned Model Registry. |
+
+---
 
 ## Architecture
 
 ```
- data/raw/*.txt ──► load_data ──► preprocess ──► train.py ──► models/checkpoints/lstm_best.pt
- (C-MAPSS FD001)   (RUL labels,   (engine split,   │           data/processed/preprocessor.joblib
-                    clipping)      scaler, windows)│           outputs/training_history.json
-                                                   ▼
-                              predict.py (Predictor: same preprocessing as training)
-                               ▲                    ▲
-                    evaluate.py            backend/main.py  (FastAPI – the ONLY process that loads the model)
-                (metrics.json, CSV)                 ▲
-                                                    │  HTTP/JSON  (RUL_API_URL, default http://127.0.0.1:8000)
-                                                    ▼
-                                       dashboard/api_client.py ◄── dashboard/app.py (Streamlit + Plotly)
+                                      ┌────────────────────────────────────────────────────────┐
+                                      │              Streamlit Industrial Dashboard            │
+                                      │   [Mode 1: NASA Demo] [Mode 2: Upload] [Mode 3: Adapt] │
+                                      └───────────────────────────┬────────────────────────────┘
+                                                                  │ HTTP (ApiClient)
+                                                                  ▼
+                                      ┌────────────────────────────────────────────────────────┐
+                                      │                 FastAPI Backend Server                 │
+                                      │    Classic Routes (/)  │  Extended REST Routes (/api/v1)│
+                                      └─────────────┬─────────────────────────────┬────────────┘
+                                                    │                             │
+                        ┌───────────────────────────┴──────────┐   ┌──────────────┴────────────┐
+                        │        NASA FD001 Inference          │   │  Multi-Industry Engine    │
+                        │  - Predictor (models/lstm_best.pt)   │   │  - Validator & Profiler   │
+                        │  - Data-Driven Health States         │   │  - Sensor Mapper          │
+                        │  - MC-Dropout Uncertainty            │   │  - Model Registry         │
+                        │  - C-MAPSS Trajectories              │   │  - Adaptation Trainer     │
+                        └──────────────────────────────────────┘   └───────────────────────────┘
 ```
+
+### Critical Architectural Principles
+1. **Pandas-Free Execution:** All tabular parsing, matrix transformations, and window generations use pure NumPy and Python `csv`/`json`. HTML tables are rendered via `table_view.py`. This guarantees compatibility on machines where pandas compiled DLLs are restricted by Windows Application Control policies.
+2. **Strict Model Safety Shield:** Machine learning models trained on jet engine thermodynamics cannot be blindly evaluated against water pumps or induction motors. The platform enforces schema verification and semantic validation before executing any model inference.
+3. **Asset-Level Data Splitting:** During model adaptation and training, splits occur at the machine/asset level prior to sliding window generation. This guarantees zero data leakage between training and validation windows.
+
+---
+
+## Setup & Startup (Windows, PowerShell)
+
+### 1. Environment Setup
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+# Install PyTorch and platform requirements:
+pip install torch --index-url https://download.pytorch.org/whl/cu128
+pip install -r requirements.txt
+```
+
+### 2. Run the Services
+You can start both the backend and dashboard using the automated startup script:
+```powershell
+powershell -ExecutionPolicy Bypass -File .\start_demo.ps1
+```
+
+Or manually in two separate terminal windows:
+```powershell
+# Terminal 1 – FastAPI Backend (Docs at http://127.0.0.1:8000/docs)
+.\.venv\Scripts\python.exe -m uvicorn backend.main:app --port 8000
+
+# Terminal 2 – Streamlit Dashboard (http://localhost:8501)
+.\.venv\Scripts\python.exe -m streamlit run dashboard/app.py
+```
+
+---
+
+## Synthetic Sample Datasets
+
+Located in `data/sample_external/` for testing and demonstration:
+- `synthetic_pump_run_to_failure.csv`: Industrial centrifugal slurry pump dataset (5 assets, run-to-failure cycle trajectories, vibration RMS, bearing temp, suction/discharge pressure, current, flow rate, RUL).
+- `synthetic_motor_incompatible.csv`: Incompatible motor dataset demonstrating the Model Safety Shield blocking blind inference and guiding users to Industry Adaptation.
+
+---
+
+## API Reference (v1 Endpoints)
+
+| Endpoint | Method | Description |
+|---|---|---|
+| `/api/v1/datasets/upload` | POST | Upload CSV dataset with size, extension, and structure checks |
+| `/api/v1/datasets/validate` | POST | Deep validation of time continuity, duplicates, and sequence lengths |
+| `/api/v1/datasets/profile` | POST | Statistical profiling: sensor distributions, 3σ outliers, and correlation matrix |
+| `/api/v1/datasets/auto-map` | POST | Intelligent keyword-based column to sensor mapping |
+| `/api/v1/industries` | GET | List supported industries, machine categories, and canonical sensor schemas |
+| `/api/v1/models/registry` | GET | List registered predictive maintenance models with metadata |
+| `/api/v1/models/{model_id}` | GET | Get model details, architecture, and validation metrics |
+| `/api/v1/models/train` | POST | Launch model adaptation training on external dataset (background job) |
+| `/api/v1/models/training/{job_id}` | GET | Check progress and metrics of a training job |
+| `/api/v1/predict` | POST | Universal multi-model RUL prediction with uncertainty |
+| `/api/v1/predictions/history` | GET | Audit log of recent RUL predictions |
 
 The dashboard contains no model, dataset or preprocessing code: it imports nothing from `src/` (enforced by
 `tests/test_dashboard_client.py`). Every number it shows comes from the API:

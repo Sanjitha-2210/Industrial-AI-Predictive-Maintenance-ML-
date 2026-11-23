@@ -1,0 +1,862 @@
+[
+  {
+    "model_id": "nasa_cmapss_lstm_v1",
+    "model_name": "NASA C-MAPSS FD001 Turbofan LSTM Baseline",
+    "model_version": "1.0.0",
+    "industry": "Aerospace & Aviation",
+    "machine_category": "Turbofan Jet Engine",
+    "machine_id": "34",
+    "latest_cycle": 203,
+    "predicted_rul": 7.3,
+    "uncertainty": 2.57,
+    "uncertainty_method": "MC-dropout std over 30 fixed-seed dropout masks on the FC head (reproducible; approximate, not calibrated)",
+    "cycles_used": 30,
+    "window_padded": false,
+    "sensor_trends": [
+      {
+        "sensor": "sensor_11",
+        "drift_std_units": 1.4369327532259901,
+        "direction": "rising"
+      },
+      {
+        "sensor": "sensor_12",
+        "drift_std_units": -1.330484516263171,
+        "direction": "falling"
+      },
+      {
+        "sensor": "sensor_8",
+        "drift_std_units": 1.275741586597959,
+        "direction": "rising"
+      },
+      {
+        "sensor": "sensor_13",
+        "drift_std_units": 1.2027826497143173,
+        "direction": "rising"
+      },
+      {
+        "sensor": "sensor_2",
+        "drift_std_units": 1.1858070953077366,
+        "direction": "rising"
+      }
+    ],
+    "explanation": "The LSTM estimates about 7 cycles of remaining life (\u00b12.6 MC-dropout spread) based on the last 30 cycles. Channels drifting most from this engine's early baseline: sensor_11 (rising, +1.4\u03c3), sensor_12 (falling, -1.3\u03c3), sensor_8 (rising, +1.3\u03c3). This shows correlated sensor movement, not a verified causal attribution.",
+    "timestamp": "2026-11-23T23:06:22.971305"
+  },
+  {
+    "model_id": "nasa_cmapss_lstm_v1",
+    "model_name": "NASA C-MAPSS FD001 Turbofan LSTM Baseline",
+    "model_version": "1.0.0",
+    "industry": "Aerospace & Aviation",
+    "machine_category": "Turbofan Jet Engine",
+    "machine_id": "34",
+    "latest_cycle": 203,
+    "predicted_rul": 113.83,
+    "uncertainty": 10.42,
+    "uncertainty_method": "MC-dropout std over 30 fixed-seed dropout masks on the FC head (reproducible; approximate, not calibrated)",
+    "cycles_used": 203,
+    "window_padded": false,
+    "sensor_trends": [
+      {
+        "sensor": "sensor_6",
+        "drift_std_units": 0.7191103317818448,
+        "direction": "rising"
+      },
+      {
+        "sensor": "sensor_7",
+        "drift_std_units": -0.4527048995415016,
+        "direction": "falling"
+      },
+      {
+        "sensor": "sensor_17",
+        "drift_std_units": 0.45202689069621904,
+        "direction": "rising"
+      },
+      {
+        "sensor": "sensor_2",
+        "drift_std_units": -0.3139489274254832,
+        "direction": "falling"
+      }
+    ],
+    "explanation": "The LSTM estimates about 114 cycles of remaining life (\u00b110.4 MC-dropout spread) based on the last 30 cycles. Channels drifting most from this engine's early baseline: sensor_6 (rising, +0.7\u03c3), sensor_7 (falling, -0.5\u03c3), sensor_17 (rising, +0.5\u03c3). This shows correlated sensor movement, not a verified causal attribution.",
+    "timestamp": "2026-11-24T00:14:34.155054"
+  },
+  {
+    "model_id": "nasa_cmapss_lstm_v1",
+    "model_name": "NASA C-MAPSS FD001 Turbofan LSTM Baseline",
+    "model_version": "1.0.0",
+    "industry": "Aerospace & Aviation",
+    "machine_category": "Turbofan Jet Engine",
+    "machine_id": "34",
+    "latest_cycle": 203,
+    "predicted_rul": 7.3,
+    "uncertainty": 2.57,
+    "uncertainty_method": "MC-dropout std over 30 fixed-seed dropout masks on the FC head (reproducible; approximate, not calibrated)",
+    "cycles_used": 203,
+    "window_padded": false,
+    "sensor_trends": [
+      {
+        "sensor": "sensor_7",
+        "drift_std_units": -3.635152775423012,
+        "direction": "falling"
+      },
+      {
+        "sensor": "sensor_8",
+        "drift_std_units": 3.5295517229208486,
+        "direction": "rising"
+      },
+      {
+        "sensor": "sensor_13",
+        "drift_std_units": 3.3566027433884233,
+        "direction": "rising"
+      },
+      {
+        "sensor": "sensor_11",
+        "drift_std_units": 3.2780028432967923,
+        "direction": "rising"
+      },
+      {
+        "sensor": "sensor_12",
+        "drift_std_units": -3.2037200915513377,
+        "direction": "falling"
+      }
+    ],
+    "explanation": "The LSTM estimates about 7 cycles of remaining life (\u00b12.6 MC-dropout spread) based on the last 30 cycles. Channels drifting most from this engine's early baseline: sensor_7 (falling, -3.6\u03c3), sensor_8 (rising, +3.5\u03c3), sensor_13 (rising, +3.4\u03c3). This shows correlated sensor movement, not a verified causal attribution.",
+    "timestamp": "2026-11-24T00:18:28.629522"
+  },
+  {
+    "model_id": "nasa_cmapss_lstm_v1",
+    "model_name": "NASA C-MAPSS FD001 Turbofan LSTM Baseline",
+    "model_version": "1.0.0",
+    "industry": "Aerospace & Aviation",
+    "machine_category": "Turbofan Jet Engine",
+    "machine_id": "34",
+    "latest_cycle": 203,
+    "predicted_rul": 7.3,
+    "uncertainty": 2.57,
+    "uncertainty_method": "MC-dropout std over 30 fixed-seed dropout masks on the FC head (reproducible; approximate, not calibrated)",
+    "cycles_used": 203,
+    "window_padded": false,
+    "sensor_trends": [
+      {
+        "sensor": "sensor_7",
+        "drift_std_units": -3.635152775423012,
+        "direction": "falling"
+      },
+      {
+        "sensor": "sensor_8",
+        "drift_std_units": 3.5295517229208486,
+        "direction": "rising"
+      },
+      {
+        "sensor": "sensor_13",
+        "drift_std_units": 3.3566027433884233,
+        "direction": "rising"
+      },
+      {
+        "sensor": "sensor_11",
+        "drift_std_units": 3.2780028432967923,
+        "direction": "rising"
+      },
+      {
+        "sensor": "sensor_12",
+        "drift_std_units": -3.2037200915513377,
+        "direction": "falling"
+      }
+    ],
+    "explanation": "The LSTM estimates about 7 cycles of remaining life (\u00b12.6 MC-dropout spread) based on the last 30 cycles. Channels drifting most from this engine's early baseline: sensor_7 (falling, -3.6\u03c3), sensor_8 (rising, +3.5\u03c3), sensor_13 (rising, +3.4\u03c3). This shows correlated sensor movement, not a verified causal attribution.",
+    "timestamp": "2026-11-24T00:20:56.531629"
+  },
+  {
+    "model_id": "nasa_cmapss_lstm_v1",
+    "model_name": "NASA C-MAPSS FD001 Turbofan LSTM Baseline",
+    "model_version": "1.0.0",
+    "industry": "Aerospace & Aviation",
+    "machine_category": "Turbofan Jet Engine",
+    "machine_id": "34",
+    "latest_cycle": 203,
+    "predicted_rul": 7.3,
+    "uncertainty": 2.57,
+    "uncertainty_method": "MC-dropout std over 30 fixed-seed dropout masks on the FC head (reproducible; approximate, not calibrated)",
+    "cycles_used": 203,
+    "window_padded": false,
+    "sensor_trends": [
+      {
+        "sensor": "sensor_7",
+        "drift_std_units": -3.635152775423012,
+        "direction": "falling"
+      },
+      {
+        "sensor": "sensor_8",
+        "drift_std_units": 3.5295517229208486,
+        "direction": "rising"
+      },
+      {
+        "sensor": "sensor_13",
+        "drift_std_units": 3.3566027433884233,
+        "direction": "rising"
+      },
+      {
+        "sensor": "sensor_11",
+        "drift_std_units": 3.2780028432967923,
+        "direction": "rising"
+      },
+      {
+        "sensor": "sensor_12",
+        "drift_std_units": -3.2037200915513377,
+        "direction": "falling"
+      }
+    ],
+    "explanation": "The LSTM estimates about 7 cycles of remaining life (\u00b12.6 MC-dropout spread) based on the last 30 cycles. Channels drifting most from this engine's early baseline: sensor_7 (falling, -3.6\u03c3), sensor_8 (rising, +3.5\u03c3), sensor_13 (rising, +3.4\u03c3). This shows correlated sensor movement, not a verified causal attribution.",
+    "timestamp": "2026-11-24T00:21:21.382442"
+  },
+  {
+    "model_id": "nasa_cmapss_lstm_v1",
+    "model_name": "NASA C-MAPSS FD001 Turbofan LSTM Baseline",
+    "model_version": "1.0.0",
+    "industry": "Aerospace & Aviation",
+    "machine_category": "Turbofan Jet Engine",
+    "machine_id": "34",
+    "latest_cycle": 203,
+    "predicted_rul": 7.3,
+    "uncertainty": 2.57,
+    "uncertainty_method": "MC-dropout std over 30 fixed-seed dropout masks on the FC head (reproducible; approximate, not calibrated)",
+    "cycles_used": 203,
+    "window_padded": false,
+    "sensor_trends": [
+      {
+        "sensor": "sensor_7",
+        "drift_std_units": -3.635152775423012,
+        "direction": "falling"
+      },
+      {
+        "sensor": "sensor_8",
+        "drift_std_units": 3.5295517229208486,
+        "direction": "rising"
+      },
+      {
+        "sensor": "sensor_13",
+        "drift_std_units": 3.3566027433884233,
+        "direction": "rising"
+      },
+      {
+        "sensor": "sensor_11",
+        "drift_std_units": 3.2780028432967923,
+        "direction": "rising"
+      },
+      {
+        "sensor": "sensor_12",
+        "drift_std_units": -3.2037200915513377,
+        "direction": "falling"
+      }
+    ],
+    "explanation": "The LSTM estimates about 7 cycles of remaining life (\u00b12.6 MC-dropout spread) based on the last 30 cycles. Channels drifting most from this engine's early baseline: sensor_7 (falling, -3.6\u03c3), sensor_8 (rising, +3.5\u03c3), sensor_13 (rising, +3.4\u03c3). This shows correlated sensor movement, not a verified causal attribution.",
+    "timestamp": "2026-11-24T00:21:56.115445"
+  },
+  {
+    "model_id": "nasa_cmapss_lstm_v1",
+    "model_name": "NASA C-MAPSS FD001 Turbofan LSTM Baseline",
+    "model_version": "1.0.0",
+    "industry": "Aerospace & Aviation",
+    "machine_category": "Turbofan Jet Engine",
+    "machine_id": "34",
+    "latest_cycle": 203,
+    "predicted_rul": 7.3,
+    "uncertainty": 2.57,
+    "uncertainty_method": "MC-dropout std over 30 fixed-seed dropout masks on the FC head (reproducible; approximate, not calibrated)",
+    "cycles_used": 203,
+    "window_padded": false,
+    "sensor_trends": [
+      {
+        "sensor": "sensor_7",
+        "drift_std_units": -3.635152775423012,
+        "direction": "falling"
+      },
+      {
+        "sensor": "sensor_8",
+        "drift_std_units": 3.5295517229208486,
+        "direction": "rising"
+      },
+      {
+        "sensor": "sensor_13",
+        "drift_std_units": 3.3566027433884233,
+        "direction": "rising"
+      },
+      {
+        "sensor": "sensor_11",
+        "drift_std_units": 3.2780028432967923,
+        "direction": "rising"
+      },
+      {
+        "sensor": "sensor_12",
+        "drift_std_units": -3.2037200915513377,
+        "direction": "falling"
+      }
+    ],
+    "explanation": "The LSTM estimates about 7 cycles of remaining life (\u00b12.6 MC-dropout spread) based on the last 30 cycles. Channels drifting most from this engine's early baseline: sensor_7 (falling, -3.6\u03c3), sensor_8 (rising, +3.5\u03c3), sensor_13 (rising, +3.4\u03c3). This shows correlated sensor movement, not a verified causal attribution.",
+    "timestamp": "2026-11-24T00:24:25.653039"
+  },
+  {
+    "model_id": "nasa_cmapss_lstm_v1",
+    "model_name": "NASA C-MAPSS FD001 Turbofan LSTM Baseline",
+    "model_version": "1.0.0",
+    "industry": "Aerospace & Aviation",
+    "machine_category": "Turbofan Jet Engine",
+    "machine_id": "34",
+    "latest_cycle": 203,
+    "predicted_rul": 7.3,
+    "uncertainty": 2.57,
+    "uncertainty_method": "MC-dropout std over 30 fixed-seed dropout masks on the FC head (reproducible; approximate, not calibrated)",
+    "cycles_used": 203,
+    "window_padded": false,
+    "sensor_trends": [
+      {
+        "sensor": "sensor_7",
+        "drift_std_units": -3.635152775423012,
+        "direction": "falling"
+      },
+      {
+        "sensor": "sensor_8",
+        "drift_std_units": 3.5295517229208486,
+        "direction": "rising"
+      },
+      {
+        "sensor": "sensor_13",
+        "drift_std_units": 3.3566027433884233,
+        "direction": "rising"
+      },
+      {
+        "sensor": "sensor_11",
+        "drift_std_units": 3.2780028432967923,
+        "direction": "rising"
+      },
+      {
+        "sensor": "sensor_12",
+        "drift_std_units": -3.2037200915513377,
+        "direction": "falling"
+      }
+    ],
+    "explanation": "The LSTM estimates about 7 cycles of remaining life (\u00b12.6 MC-dropout spread) based on the last 30 cycles. Channels drifting most from this engine's early baseline: sensor_7 (falling, -3.6\u03c3), sensor_8 (rising, +3.5\u03c3), sensor_13 (rising, +3.4\u03c3). This shows correlated sensor movement, not a verified causal attribution.",
+    "timestamp": "2026-11-24T00:24:43.415415"
+  },
+  {
+    "model_id": "model_centrifugal_pump_cc383b9e",
+    "model_name": "Adapted Centrifugal Pump Model",
+    "model_version": "1.0.0",
+    "industry": "Water & Wastewater",
+    "machine_category": "Centrifugal Pump",
+    "machine_id": "PUMP_01",
+    "latest_cycle": 30,
+    "predicted_rul": 81.52,
+    "uncertainty": 15.25,
+    "uncertainty_method": "MC-dropout std over 30 masks",
+    "cycles_used": 30,
+    "window_padded": false,
+    "sensor_trends": [
+      {
+        "feature": "sensor_vibration",
+        "current": 1.861,
+        "delta": 0.126,
+        "direction": "up"
+      },
+      {
+        "feature": "sensor_temperature",
+        "current": 46.23,
+        "delta": 2.33,
+        "direction": "up"
+      },
+      {
+        "feature": "sensor_pressure",
+        "current": 23.27,
+        "delta": -0.77,
+        "direction": "down"
+      },
+      {
+        "feature": "sensor_current",
+        "current": 47.78,
+        "delta": -0.35,
+        "direction": "down"
+      },
+      {
+        "feature": "sensor_flow",
+        "current": 411.7,
+        "delta": -5.38,
+        "direction": "down"
+      }
+    ],
+    "explanation": "Model 'Adapted Centrifugal Pump Model' predicts 81.5 cycles of Remaining Useful Life (uncertainty \u00b115.3 cycles). Based on 20 observed cycles.",
+    "timestamp": "2026-11-24T01:13:23.800926"
+  },
+  {
+    "model_id": "nasa_cmapss_lstm_v1",
+    "model_name": "NASA C-MAPSS FD001 Turbofan LSTM Baseline",
+    "model_version": "1.0.0",
+    "industry": "Aerospace & Aviation",
+    "machine_category": "Turbofan Jet Engine",
+    "machine_id": "34",
+    "latest_cycle": 203,
+    "predicted_rul": 7.3,
+    "uncertainty": 2.57,
+    "uncertainty_method": "MC-dropout std over 30 fixed-seed dropout masks on the FC head (reproducible; approximate, not calibrated)",
+    "cycles_used": 203,
+    "window_padded": false,
+    "sensor_trends": [
+      {
+        "sensor": "sensor_7",
+        "drift_std_units": -3.635152775423012,
+        "direction": "falling"
+      },
+      {
+        "sensor": "sensor_8",
+        "drift_std_units": 3.5295517229208486,
+        "direction": "rising"
+      },
+      {
+        "sensor": "sensor_13",
+        "drift_std_units": 3.3566027433884233,
+        "direction": "rising"
+      },
+      {
+        "sensor": "sensor_11",
+        "drift_std_units": 3.2780028432967923,
+        "direction": "rising"
+      },
+      {
+        "sensor": "sensor_12",
+        "drift_std_units": -3.2037200915513377,
+        "direction": "falling"
+      }
+    ],
+    "explanation": "The LSTM estimates about 7 cycles of remaining life (\u00b12.6 MC-dropout spread) based on the last 30 cycles. Channels drifting most from this engine's early baseline: sensor_7 (falling, -3.6\u03c3), sensor_8 (rising, +3.5\u03c3), sensor_13 (rising, +3.4\u03c3). This shows correlated sensor movement, not a verified causal attribution.",
+    "timestamp": "2026-11-24T01:14:59.672619"
+  },
+  {
+    "model_id": "model_centrifugal_pump_d9dc87af",
+    "model_name": "Adapted synthetic_pump_ Model",
+    "model_version": "1.0.0",
+    "industry": "Water & Wastewater",
+    "machine_category": "Centrifugal Pump",
+    "machine_id": "PUMP_01",
+    "latest_cycle": 128,
+    "predicted_rul": 54.99,
+    "uncertainty": 20.94,
+    "uncertainty_method": "MC-dropout std over 30 masks",
+    "cycles_used": 50,
+    "window_padded": false,
+    "sensor_trends": [
+      {
+        "feature": "vibration_rms",
+        "current": 13.273,
+        "delta": 9.071,
+        "direction": "up"
+      },
+      {
+        "feature": "bearing_temp",
+        "current": 90.68,
+        "delta": 34.91,
+        "direction": "up"
+      },
+      {
+        "feature": "discharge_pressure",
+        "current": 16.96,
+        "delta": -5.19,
+        "direction": "down"
+      },
+      {
+        "feature": "motor_current",
+        "current": 70.71,
+        "delta": 17.4,
+        "direction": "up"
+      },
+      {
+        "feature": "flow_rate",
+        "current": 340.9,
+        "delta": -64.01,
+        "direction": "down"
+      }
+    ],
+    "explanation": "Model 'Adapted synthetic_pump_ Model' predicts 55.0 cycles of Remaining Useful Life (uncertainty \u00b120.9 cycles). Based on 30 observed cycles.",
+    "timestamp": "2026-11-24T01:20:19.052236"
+  },
+  {
+    "model_id": "nasa_cmapss_lstm_v1",
+    "model_name": "NASA C-MAPSS FD001 Turbofan LSTM Baseline",
+    "model_version": "1.0.0",
+    "industry": "Aerospace & Aviation",
+    "machine_category": "Turbofan Jet Engine",
+    "machine_id": "1",
+    "latest_cycle": 31,
+    "predicted_rul": 111.4,
+    "uncertainty": 10.23,
+    "uncertainty_method": "MC-dropout std over 30 fixed-seed dropout masks on the FC head (reproducible; approximate, not calibrated)",
+    "cycles_used": 31,
+    "window_padded": false,
+    "sensor_trends": [
+      {
+        "sensor": "sensor_8",
+        "drift_std_units": 0.5244715411563513,
+        "direction": "rising"
+      },
+      {
+        "sensor": "sensor_17",
+        "drift_std_units": 0.32287635049729924,
+        "direction": "rising"
+      },
+      {
+        "sensor": "sensor_15",
+        "drift_std_units": 0.25552326561952066,
+        "direction": "rising"
+      },
+      {
+        "sensor": "sensor_13",
+        "drift_std_units": 0.2517452057532573,
+        "direction": "rising"
+      }
+    ],
+    "explanation": "The LSTM estimates about 111 cycles of remaining life (\u00b110.2 MC-dropout spread) based on the last 30 cycles. Channels drifting most from this engine's early baseline: sensor_8 (rising, +0.5\u03c3), sensor_17 (rising, +0.3\u03c3). This shows correlated sensor movement, not a verified causal attribution.",
+    "timestamp": "2026-11-24T01:21:25.865952"
+  },
+  {
+    "model_id": "nasa_cmapss_lstm_v1",
+    "model_name": "NASA C-MAPSS FD001 Turbofan LSTM Baseline",
+    "model_version": "1.0.0",
+    "industry": "Aerospace & Aviation",
+    "machine_category": "Turbofan Jet Engine",
+    "machine_id": "2",
+    "latest_cycle": 49,
+    "predicted_rul": 119.9,
+    "uncertainty": 11.12,
+    "uncertainty_method": "MC-dropout std over 30 fixed-seed dropout masks on the FC head (reproducible; approximate, not calibrated)",
+    "cycles_used": 49,
+    "window_padded": false,
+    "sensor_trends": [
+      {
+        "sensor": "sensor_21",
+        "drift_std_units": -0.5937862142556192,
+        "direction": "falling"
+      },
+      {
+        "sensor": "sensor_15",
+        "drift_std_units": 0.5723934530474906,
+        "direction": "rising"
+      },
+      {
+        "sensor": "sensor_2",
+        "drift_std_units": 0.3479433972741157,
+        "direction": "rising"
+      },
+      {
+        "sensor": "sensor_13",
+        "drift_std_units": 0.30768858481095007,
+        "direction": "rising"
+      }
+    ],
+    "explanation": "The LSTM estimates about 120 cycles of remaining life (\u00b111.1 MC-dropout spread) based on the last 30 cycles. Channels drifting most from this engine's early baseline: sensor_21 (falling, -0.6\u03c3), sensor_15 (rising, +0.6\u03c3). This shows correlated sensor movement, not a verified causal attribution.",
+    "timestamp": "2026-11-24T01:21:38.831499"
+  },
+  {
+    "model_id": "nasa_cmapss_lstm_v1",
+    "model_name": "NASA C-MAPSS FD001 Turbofan LSTM Baseline",
+    "model_version": "1.0.0",
+    "industry": "Aerospace & Aviation",
+    "machine_category": "Turbofan Jet Engine",
+    "machine_id": "34",
+    "latest_cycle": 203,
+    "predicted_rul": 7.3,
+    "uncertainty": 2.57,
+    "uncertainty_method": "MC-dropout std over 30 fixed-seed dropout masks on the FC head (reproducible; approximate, not calibrated)",
+    "cycles_used": 203,
+    "window_padded": false,
+    "sensor_trends": [
+      {
+        "sensor": "sensor_7",
+        "drift_std_units": -3.635152775423012,
+        "direction": "falling"
+      },
+      {
+        "sensor": "sensor_8",
+        "drift_std_units": 3.5295517229208486,
+        "direction": "rising"
+      },
+      {
+        "sensor": "sensor_13",
+        "drift_std_units": 3.3566027433884233,
+        "direction": "rising"
+      },
+      {
+        "sensor": "sensor_11",
+        "drift_std_units": 3.2780028432967923,
+        "direction": "rising"
+      },
+      {
+        "sensor": "sensor_12",
+        "drift_std_units": -3.2037200915513377,
+        "direction": "falling"
+      }
+    ],
+    "explanation": "The LSTM estimates about 7 cycles of remaining life (\u00b12.6 MC-dropout spread) based on the last 30 cycles. Channels drifting most from this engine's early baseline: sensor_7 (falling, -3.6\u03c3), sensor_8 (rising, +3.5\u03c3), sensor_13 (rising, +3.4\u03c3). This shows correlated sensor movement, not a verified causal attribution.",
+    "timestamp": "2026-11-24T01:26:34.182881"
+  },
+  {
+    "model_id": "nasa_cmapss_lstm_v1",
+    "model_name": "NASA C-MAPSS FD001 Turbofan LSTM Baseline",
+    "model_version": "1.0.0",
+    "industry": "Aerospace & Aviation",
+    "machine_category": "Turbofan Jet Engine",
+    "machine_id": "34",
+    "latest_cycle": 203,
+    "predicted_rul": 7.3,
+    "uncertainty": 2.57,
+    "uncertainty_method": "MC-dropout std over 30 fixed-seed dropout masks on the FC head (reproducible; approximate, not calibrated)",
+    "cycles_used": 203,
+    "window_padded": false,
+    "sensor_trends": [
+      {
+        "sensor": "sensor_7",
+        "drift_std_units": -3.635152775423012,
+        "direction": "falling"
+      },
+      {
+        "sensor": "sensor_8",
+        "drift_std_units": 3.5295517229208486,
+        "direction": "rising"
+      },
+      {
+        "sensor": "sensor_13",
+        "drift_std_units": 3.3566027433884233,
+        "direction": "rising"
+      },
+      {
+        "sensor": "sensor_11",
+        "drift_std_units": 3.2780028432967923,
+        "direction": "rising"
+      },
+      {
+        "sensor": "sensor_12",
+        "drift_std_units": -3.2037200915513377,
+        "direction": "falling"
+      }
+    ],
+    "explanation": "The LSTM estimates about 7 cycles of remaining life (\u00b12.6 MC-dropout spread) based on the last 30 cycles. Channels drifting most from this engine's early baseline: sensor_7 (falling, -3.6\u03c3), sensor_8 (rising, +3.5\u03c3), sensor_13 (rising, +3.4\u03c3). This shows correlated sensor movement, not a verified causal attribution.",
+    "timestamp": "2026-11-24T01:51:07.140344"
+  },
+  {
+    "model_id": "nasa_cmapss_lstm_v1",
+    "model_name": "NASA C-MAPSS FD001 Turbofan LSTM Baseline",
+    "model_version": "1.0.0",
+    "industry": "Aerospace & Aviation",
+    "machine_category": "Turbofan Jet Engine",
+    "machine_id": "34",
+    "latest_cycle": 203,
+    "predicted_rul": 7.3,
+    "uncertainty": 2.57,
+    "uncertainty_method": "MC-dropout std over 30 fixed-seed dropout masks on the FC head (reproducible; approximate, not calibrated)",
+    "cycles_used": 203,
+    "window_padded": false,
+    "sensor_trends": [
+      {
+        "sensor": "sensor_7",
+        "drift_std_units": -3.635152775423012,
+        "direction": "falling"
+      },
+      {
+        "sensor": "sensor_8",
+        "drift_std_units": 3.5295517229208486,
+        "direction": "rising"
+      },
+      {
+        "sensor": "sensor_13",
+        "drift_std_units": 3.3566027433884233,
+        "direction": "rising"
+      },
+      {
+        "sensor": "sensor_11",
+        "drift_std_units": 3.2780028432967923,
+        "direction": "rising"
+      },
+      {
+        "sensor": "sensor_12",
+        "drift_std_units": -3.2037200915513377,
+        "direction": "falling"
+      }
+    ],
+    "explanation": "The LSTM estimates about 7 cycles of remaining life (\u00b12.6 MC-dropout spread) based on the last 30 cycles. Channels drifting most from this engine's early baseline: sensor_7 (falling, -3.6\u03c3), sensor_8 (rising, +3.5\u03c3), sensor_13 (rising, +3.4\u03c3). This shows correlated sensor movement, not a verified causal attribution.",
+    "timestamp": "2026-11-24T02:08:38.263407"
+  },
+  {
+    "model_id": "nasa_cmapss_lstm_v1",
+    "model_name": "NASA C-MAPSS FD001 Turbofan LSTM Baseline",
+    "model_version": "1.0.0",
+    "industry": "Aerospace & Aviation",
+    "machine_category": "Turbofan Jet Engine",
+    "machine_id": "34",
+    "latest_cycle": 203,
+    "predicted_rul": 7.3,
+    "uncertainty": 2.57,
+    "uncertainty_method": "MC-dropout std over 30 fixed-seed dropout masks on the FC head (reproducible; approximate, not calibrated)",
+    "cycles_used": 203,
+    "window_padded": false,
+    "sensor_trends": [
+      {
+        "sensor": "sensor_7",
+        "drift_std_units": -3.635152775423012,
+        "direction": "falling"
+      },
+      {
+        "sensor": "sensor_8",
+        "drift_std_units": 3.5295517229208486,
+        "direction": "rising"
+      },
+      {
+        "sensor": "sensor_13",
+        "drift_std_units": 3.3566027433884233,
+        "direction": "rising"
+      },
+      {
+        "sensor": "sensor_11",
+        "drift_std_units": 3.2780028432967923,
+        "direction": "rising"
+      },
+      {
+        "sensor": "sensor_12",
+        "drift_std_units": -3.2037200915513377,
+        "direction": "falling"
+      }
+    ],
+    "explanation": "The LSTM estimates about 7 cycles of remaining life (\u00b12.6 MC-dropout spread) based on the last 30 cycles. Channels drifting most from this engine's early baseline: sensor_7 (falling, -3.6\u03c3), sensor_8 (rising, +3.5\u03c3), sensor_13 (rising, +3.4\u03c3). This shows correlated sensor movement, not a verified causal attribution.",
+    "timestamp": "2026-11-24T02:09:22.233364"
+  },
+  {
+    "model_id": "model_centrifugal_pump_3b9cfb78",
+    "model_name": "Adapted converted_algae Model",
+    "model_version": "1.0.0",
+    "industry": "Water & Wastewater",
+    "machine_category": "Centrifugal Pump",
+    "machine_id": "UNIT_01",
+    "latest_cycle": 200,
+    "predicted_rul": 6.71,
+    "uncertainty": 12.24,
+    "uncertainty_method": "MC-dropout std over 30 masks",
+    "cycles_used": 50,
+    "window_padded": false,
+    "sensor_trends": [
+      {
+        "feature": "bearing_temp",
+        "current": 17.32,
+        "delta": -2.164,
+        "direction": "down"
+      }
+    ],
+    "explanation": "Model 'Adapted converted_algae Model' predicts 6.7 cycles of Remaining Useful Life (uncertainty \u00b112.2 cycles). Based on 30 observed cycles.",
+    "timestamp": "2026-11-24T02:12:29.396523"
+  },
+  {
+    "model_id": "model_centrifugal_pump_3b9cfb78",
+    "model_name": "Adapted converted_algae Model",
+    "model_version": "1.0.0",
+    "industry": "Water & Wastewater",
+    "machine_category": "Centrifugal Pump",
+    "machine_id": "M14860",
+    "latest_cycle": 1,
+    "predicted_rul": 76.14,
+    "uncertainty": 19.0,
+    "uncertainty_method": "MC-dropout std over 30 masks",
+    "cycles_used": 1,
+    "window_padded": true,
+    "sensor_trends": [
+      {
+        "feature": "bearing_temp",
+        "current": 298.1,
+        "delta": 0.0,
+        "direction": "stable"
+      }
+    ],
+    "explanation": "Model 'Adapted converted_algae Model' predicts 76.1 cycles of Remaining Useful Life (uncertainty \u00b119.0 cycles). Based on 1 observed cycles.",
+    "timestamp": "2026-11-24T02:14:28.641560"
+  },
+  {
+    "model_id": "model_centrifugal_pump_3b9cfb78",
+    "model_name": "Adapted converted_algae Model",
+    "model_version": "1.0.0",
+    "industry": "Water & Wastewater",
+    "machine_category": "Centrifugal Pump",
+    "machine_id": "M14860",
+    "latest_cycle": 1,
+    "predicted_rul": 76.14,
+    "uncertainty": 19.0,
+    "uncertainty_method": "MC-dropout std over 30 masks",
+    "cycles_used": 1,
+    "window_padded": true,
+    "sensor_trends": [
+      {
+        "feature": "bearing_temp",
+        "current": 298.1,
+        "delta": 0.0,
+        "direction": "stable"
+      }
+    ],
+    "explanation": "Model 'Adapted converted_algae Model' predicts 76.1 cycles of Remaining Useful Life (uncertainty \u00b119.0 cycles). Based on 1 observed cycles.",
+    "timestamp": "2026-11-24T02:14:32.185733"
+  },
+  {
+    "model_id": "model_centrifugal_pump_6f0d572d",
+    "model_name": "Adapted converted_algae Model",
+    "model_version": "1.0.0",
+    "industry": "Water & Wastewater",
+    "machine_category": "Centrifugal Pump",
+    "machine_id": "UNIT_01",
+    "latest_cycle": 200,
+    "predicted_rul": 6.71,
+    "uncertainty": 12.24,
+    "uncertainty_method": "MC-dropout std over 30 masks",
+    "cycles_used": 50,
+    "window_padded": false,
+    "sensor_trends": [
+      {
+        "feature": "bearing_temp",
+        "current": 17.32,
+        "delta": -2.164,
+        "direction": "down"
+      }
+    ],
+    "explanation": "Model 'Adapted converted_algae Model' predicts 6.7 cycles of Remaining Useful Life (uncertainty \u00b112.2 cycles). Based on 30 observed cycles.",
+    "timestamp": "2026-11-24T02:17:51.065354"
+  },
+  {
+    "model_id": "nasa_cmapss_lstm_v1",
+    "model_name": "NASA C-MAPSS FD001 Turbofan LSTM Baseline",
+    "model_version": "1.0.0",
+    "industry": "Aerospace & Aviation",
+    "machine_category": "Turbofan Jet Engine",
+    "machine_id": "1",
+    "latest_cycle": 31,
+    "predicted_rul": 111.4,
+    "uncertainty": 10.23,
+    "uncertainty_method": "MC-dropout std over 30 fixed-seed dropout masks on the FC head (reproducible; approximate, not calibrated)",
+    "cycles_used": 31,
+    "window_padded": false,
+    "sensor_trends": [
+      {
+        "sensor": "sensor_8",
+        "drift_std_units": 0.5244715411563513,
+        "direction": "rising"
+      },
+      {
+        "sensor": "sensor_17",
+        "drift_std_units": 0.32287635049729924,
+        "direction": "rising"
+      },
+      {
+        "sensor": "sensor_15",
+        "drift_std_units": 0.25552326561952066,
+        "direction": "rising"
+      },
+      {
+        "sensor": "sensor_13",
+        "drift_std_units": 0.2517452057532573,
+        "direction": "rising"
+      }
+    ],
+    "explanation": "The LSTM estimates about 111 cycles of remaining life (\u00b110.2 MC-dropout spread) based on the last 30 cycles. Channels drifting most from this engine's early baseline: sensor_8 (rising, +0.5\u03c3), sensor_17 (rising, +0.3\u03c3). This shows correlated sensor movement, not a verified causal attribution.",
+    "timestamp": "2026-11-24T02:18:30.967917"
+  }
+]

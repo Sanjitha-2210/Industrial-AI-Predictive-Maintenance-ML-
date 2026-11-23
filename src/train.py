@@ -4,9 +4,15 @@ import json
 import time
 
 import numpy as np
-import torch
-from torch import nn
-from torch.utils.data import DataLoader, TensorDataset
+
+try:
+    import torch
+    from torch import nn
+    from torch.utils.data import DataLoader, TensorDataset
+    _TORCH_AVAILABLE = True
+except (ImportError, OSError):
+    _TORCH_AVAILABLE = False
+
 
 from src import config as C
 from src.data.load_data import load_train
